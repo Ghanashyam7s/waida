@@ -136,14 +136,17 @@ export class EventsGalleryComponent implements OnInit {
 
     this.eventsService.getEvents().subscribe(data=>{
       console.log(data)
-      this.allEventsData = data
+      this.allEventsData = data.sort(function (a, b) {
+        return b.startDate - a.startDate;
+      });
+
       this.pastEvents = []
       for(let single of this.allEventsData){
 
         if(new Date().getTime() > single.endDate.toDate().getTime()){
-
+          
           this.pastEvents.push(single)
-
+         
           this.noData = false
 
           console.log(this.pastEvents)
