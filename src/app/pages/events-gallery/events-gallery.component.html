@@ -1,0 +1,345 @@
+  <!-- BANNER-SEC -->
+  <app-banner [banners]="banners"></app-banner>
+  <section class="master_eventgallery_sec">
+    <div class="flag_cornor"></div>
+    <!-- <ngx-spinner type="non">
+    <img height="150px" width="150px" src="../../../assets/images/Logo-Animation.gif" alt="img">
+  </ngx-spinner> -->
+    <ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+    </ngx-spinner>
+    <!-- our_member_sec -->
+    <section class="eventgallery_sec sec_padding">
+      <div class="wrapper">
+        <!-- HEADING -->
+        <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+          fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+            fxFlexFill>
+            <div class="custom_heading">
+              <h2 class="title">
+                Event<span class="primary"> Gallery</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <!-- EventDetails -->
+        <section class="gallery_sec">
+          <div class="gallery_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+            fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+            <div class="gallery_left_column" fxLayout="column" fxFlex.xl="40" fxFlex.lg="40" fxFlex.md="40"
+              fxFlex.sm="40" fxFlex.xs="100" fxFlexFill>
+              <!-- <div class="calender custom_calender">
+              <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+            </div> -->
+              <div class="custom-form-group event_dropdown_group">
+                <div class="custom-form-control">
+                  <mat-form-field appearance="outline">
+                    <mat-select placeholder="Select any events">
+                      <mat-option disabled=""> Select any Events</mat-option>
+                      <mat-option class="past_events" (click)="getPastEvents()" [value]="'Past Events'">Past Events
+                      </mat-option>
+                      <mat-option class="upcoming_events" (click)="commingEvents()" [value]="'Upcoming Events'">Upcoming
+                        Events</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="gallery_right_column" fxLayout="column" fxFlex.xl="60" fxFlex.lg="60" fxFlex.md="60"
+              fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+              <perfect-scrollbar class="modal-body-scrollbar">
+                <div class="gallery_content_box">
+
+                  <!-- Media -->
+                  <div class="media" *ngFor="let selEvent of pastEvents" [routerLink]="['/event-details', selEvent.id]">
+                    <div class="media-left">
+                      <img [src]="selEvent?.image[0]?.signedUrl" class="media-object">
+                    </div>
+                    <div class="media-body">
+                      <div class="event_head">
+                        <h4>{{selEvent?.title}} </h4>
+                        <span>{{selEvent?.startDate.toDate() | date}}</span>
+                      </div>
+                      <p class="event_place">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <!-- Jhon Mcgrath Hall, 97 Hensman St, South Perth WA 6151. -->
+                        {{selEvent?.location}}
+                      </p>
+                      <p class="event_content">
+                        {{selEvent?.shortInfo}}
+                      </p>
+                      <!-- <a [routerLink]="['/event-details', selEvent.id]" class="event_enroll">
+                    Enroll Now
+                    <img src="../../../assets/images/icons/arrow-right.png" alt="">
+                  </a> -->
+                    </div>
+                  </div>
+                  <div class="no_events_box" *ngIf="noData">
+                    <div class="w_100">
+                      <h4>Please Choose Past Events Option To View All Past Events </h4>
+                      <img src="../../../assets/images/no_events.png" alt="">
+                    </div>
+                  </div>
+
+                </div>
+              </perfect-scrollbar>
+            </div>
+          </div>
+        </section>
+        <section class="upcoming_events_sec sec_padding" id="upcommingEvents">
+          <div class="custom_heading">
+            <h2 class="title">
+              Upcoming<span class="primary"> Events</span>
+            </h2>
+          </div>
+          <div class="custom_tabs">
+            <mat-tab-group [disableRipple]="true" animationDuration="0ms">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  WAIDA Events
+                </ng-template>
+                <div class="row-wrap upcoming_events_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row"
+                  fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch">
+                  <div class="upcoming_events_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+                    fxFlex.sm="50" fxFlex.xs="100" fxFlexFill *ngFor=" let event of upCommingWaidaEvents">
+                    <div class="upcoming_events_box">
+                      <div class="upcoming_events_img">
+                        <div class="overlay"></div>
+                        <img [src]="event?.image[0]?.signedUrl" alt="">
+
+                        <div class="location_box">
+                          <div class="w-100">
+                            <!-- <h2 style="color: #FF8E29;" *ngIf="event?.hideComingSoon">coming soon...</h2>
+                            <h2 style="color: #FF8E29;" *ngIf="!event?.hideComingSoon">{{event?.startDate.toDate() | date}}</h2> -->
+
+                            <!-- <h4>{{event?.title}}</h4>
+                            <p class="location">
+                              <i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <span>{{event?.location}}</span>
+                            </p>
+                            <p class="category">Events category</p> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="upcoming_events_content">
+                        <div class="">
+                          <p>Event Date :</p>
+                          <p>{{event?.startDate.toDate() | date}} - {{event?.endDate.toDate() | date}}</p>
+                        </div>
+                        <div class="book_btn">
+                          <button class="bnt btn-sm global-btn" mat-button [routerLink]="['/event-details', event.id]"
+                            routerLinkActive="router-link-active">Book Now
+                            <img src="../../../assets/images/icons/arrow.png" alt="">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="upcoming_events_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+                  fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+                  <div class="upcoming_events_box">
+                    <div class="upcoming_events_img">
+                      <div class="overlay"></div>
+                      <img src="../../../assets/images/upcoming_events/upcoming_events_2.png" alt="">
+                      <div class="location_box">
+                        <div class="w-100">
+                          <h4>Event name</h4>
+                          <p class="location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>City, State, Country, Pincode</span>
+                          </p>
+                          <p class="category">Events category</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="upcoming_events_content">
+                      <div class="">
+                        <p>Event Date :</p>
+                        <p>31 March 2020 - 2 April 2020</p>
+                      </div>
+                      <div class="book_btn">
+                        <button class="bnt btn-sm global-btn" mat-button [routerLink]="['/event-details']"
+                          routerLinkActive="router-link-active">Book Now
+                          <img src="../../../assets/images/icons/arrow.png" alt="">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                  <!-- <div class="upcoming_events_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+                  fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+                  <div class="upcoming_events_box">
+                    <div class="upcoming_events_img">
+                      <div class="overlay"></div>
+                      <img src="../../../assets/images/upcoming_events/upcoming_events_3.png" alt="">
+                      <div class="location_box">
+                        <div class="w-100">
+                          <h4>Event name</h4>
+                          <p class="location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>City, State, Country, Pincode</span>
+                          </p>
+                          <p class="category">Events category</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="upcoming_events_content">
+                      <div class="">
+                        <p>Event Date :</p>
+                        <p>31 March 2020 - 2 April 2020</p>
+                      </div>
+                      <div class="book_btn">
+                        <button class="bnt btn-sm global-btn" mat-button [routerLink]="['/event-details']"
+                          routerLinkActive="router-link-active">Book Now
+                          <img src="../../../assets/images/icons/arrow.png" alt="">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                  <!-- <div class="upcoming_events_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+                  fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+                  <div class="upcoming_events_box">
+                    <div class="upcoming_events_img">
+                      <div class="overlay"></div>
+                      <img src="../../../assets/images/upcoming_events/upcoming_events_4.png" alt="">
+                      <div class="location_box">
+                        <div class="w-100">
+                          <h4>Event name</h4>
+                          <p class="location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>City, State, Country, Pincode</span>
+                          </p>
+                          <p class="category">Events category</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="upcoming_events_content">
+                      <div class="">
+                        <p>Event Date :</p>
+                        <p>31 March 2020 - 2 April 2020</p>
+                      </div>
+                      <div class="book_btn">
+                        <button class="bnt btn-sm global-btn" mat-button [routerLink]="['/event-details']"
+                          routerLinkActive="router-link-active">Book Now
+                          <img src="../../../assets/images/icons/arrow.png" alt="">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                  <!-- <div class="upcoming_events_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+                  fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+                  <div class="upcoming_events_box">
+                    <div class="upcoming_events_img">
+                      <div class="overlay"></div>
+                      <img src="../../../assets/images/upcoming_events/upcoming_events_5.png" alt="">
+                      <div class="location_box">
+                        <div class="w-100">
+                          <h4>Event name</h4>
+                          <p class="location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>City, State, Country, Pincode</span>
+                          </p>
+                          <p class="category">Events category</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="upcoming_events_content">
+                      <div class="">
+                        <p>Event Date :</p>
+                        <p>31 March 2020 - 2 April 2020</p>
+                      </div>
+                      <div class="book_btn">
+                        <button class="bnt btn-sm global-btn" mat-button [routerLink]="['/event-details']"
+                          routerLinkActive="router-link-active">Book Now
+                          <img src="../../../assets/images/icons/arrow.png" alt="">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                  <!-- <div class="upcoming_events_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+                  fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+                  <div class="upcoming_events_box">
+                    <div class="upcoming_events_img">
+                      <div class="overlay"></div>
+                      <img src="../../../assets/images/upcoming_events/upcoming_events_6.png" alt="">
+                      <div class="location_box">
+                        <div class="w-100">
+                          <h4>Event name</h4>
+                          <p class="location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>City, State, Country, Pincode</span>
+                          </p>
+                          <p class="category">Events category</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="upcoming_events_content">
+                      <div class="">
+                        <p>Event Date :</p>
+                        <p>31 March 2020 - 2 April 2020</p>
+                      </div>
+                      <div class="book_btn">
+                        <button class="bnt btn-sm global-btn" mat-button [routerLink]="['/event-details']"
+                          routerLinkActive="router-link-active">Book Now
+                          <img src="../../../assets/images/icons/arrow.png" alt="">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                </div>
+              </mat-tab>
+              <!-- <mat-tab>
+                <ng-template mat-tab-label>
+                  Non - WAIDA Events
+                </ng-template>
+                <div class="row-wrap upcoming_events_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row"
+                  fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch">
+                  <div class="upcoming_events_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+                    fxFlex.sm="50" fxFlex.xs="100" fxFlexFill *ngFor=" let nonWaidaEvent of upCommingNonWaidaEvents">
+                    <div class="upcoming_events_box">
+                      <div class="upcoming_events_img">
+                        <div class="overlay"></div>
+                        <img [src]="nonWaidaEvent?.image[0]?.signedUrl" alt="">
+
+                        <div class="location_box">
+                          <div class="w-100">
+                             <h2 style="color: #FF8E29;">coming soon...</h2> -->
+                            <!-- <h4>{{nonWaidaEvent?.title}}</h4>
+                            <p class="location">
+                              <i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <span>{{nonWaidaEvent?.location}}</span>
+                            </p>
+                            <p class="category">Events category</p> -->
+                         <!-- </div>
+                        </div>
+                      </div>
+                      <div class="upcoming_events_content">
+                        <div class="">
+                          <p>Event Date :</p>
+                          <p>{{nonWaidaEvent?.startDate.toDate() | date}} - {{nonWaidaEvent?.endDate.toDate() | date}}
+                          </p>
+                        </div>
+                        <div class="book_btn">
+                          <button class="bnt btn-sm global-btn" mat-button
+                            [routerLink]="['/event-details', nonWaidaEvent.id]"
+                            routerLinkActive="router-link-active">Book
+                            Now
+                            <img src="../../../assets/images/icons/arrow.png" alt="">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab> -->
+            </mat-tab-group>
+          </div>
+        </section>
+      </div>
+    </section>
+  </section>
+  <div class="chakra_center"></div>

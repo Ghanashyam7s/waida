@@ -1,0 +1,173 @@
+  <!-- BANNER-SEC -->
+  <app-banner [banners]="banners"></app-banner>
+  <section class="master_oursponsors_sec">
+    <div class="flag_cornor"></div>
+    <!-- <ngx-spinner type="non">
+    <img height="150px" width="150px" src="../../../assets/images/Logo-Animation.gif" alt="img">
+  </ngx-spinner> -->
+    <ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+    </ngx-spinner>
+    <!-- our_member_sec -->
+    <section class="our_sponsors_sec sec_padding">
+      <div class="wrapper">
+        <!-- HEADING -->
+        <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+          fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+            fxFlexFill>
+            <div class="custom_heading">
+              <h2 class="title">
+                Our <span class="primary">sponsors</span>
+              </h2>
+              <p>To Unite, Ignite & Grow Our Family We Need Your Assistance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="sponsors_about_sec">
+          <h4 class="head">Want to build brand recognition for your business among Indian Dentists & Their Families in
+            WA?</h4>
+          <div class="custom_heading">
+            <h2 class="title">
+              About <span class="primary">WAIDA</span>
+            </h2>
+          </div>
+          <ul class="about_listing">
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> Formed in 2017, the Biggest Indian Dentist
+              Organisation in
+              WA.</li>
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> It Has close to 100 members of which 80%
+              practice owners & their Families and
+              Continues to
+              Grow.</li>
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> WAID Conducts Regular Educational and
+              Social
+              events like
+              WAIDA Annual Dinner, multiple CPD course
+              events, paid Dental Training programs, Sports activities & Many More etc.</li>
+          </ul>
+          <h4 class="head">Benefits Of Becoming WAIDA Corporate Sponsor</h4>
+          <ul class="about_listing">
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> Business growth and opportunities.</li>
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> Build a relationship with an elite target
+              audience & Their
+              Families.</li>
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> Promote your business, its products and/or
+              services.</li>
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> Increase your market presence and share.
+            </li>
+            <li> <img src="../../../assets/images/icons/stepper.png" alt=""> Create a positive business image.</li>
+          </ul>
+          <div class="sponsors_btns" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutAlign.xs="center flex-start">
+            <div fxLayout="column"> <button mat-button class="btn btn-sm global-btn" (click)="downloadPdf()">
+                Download Sponsorship Agreement
+              </button></div>
+            <div fxLayout="column"><button mat-button class="btn btn-sm global-btn" (click)="sponsorRegister()">Register
+                As A Sponsor</button></div>
+          </div>
+        </div>
+        <!-- <div class="our_sponsors_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+          fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+            fxFlexFill>
+            <div class="our_sponsors_listing">
+              <div class="custom_heading">
+                <h2 class="title">
+                  Premium <span class="primary">WAIDA Sponsors</span>
+                </h2>
+              </div>
+              <ul>
+                <li *ngFor="let premium of premiumSponsors" (click)="sponsorImages(premium)">
+                  <img [src]="premium?.image?.signedUrl" alt="">
+                </li>
+                <li>
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/4.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/1.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/4.png" alt="">
+              </li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+        <div class="our_sponsors_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+          fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+            fxFlexFill>
+            <div class="our_sponsors_listing">
+              <div class="custom_heading">
+                <h2 class="title">
+                  WAIDA <span class="primary">Sponsors</span>
+                </h2>
+              </div>
+              <ul>
+                <li *ngFor="let normal of normalSponsors" (click)="sponsorImages(normal)">
+                  <img [src]="normal?.image?.signedUrl" alt="">
+                </li>
+                <!-- <li>
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/4.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/1.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/4.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/1.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/4.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/1.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </li>
+              <li>
+                <img src="../../../assets/images/clients/4.png" alt="">
+              </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <div class="chakra_center"></div>

@@ -1,0 +1,115 @@
+<ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+</ngx-spinner>
+
+<section class="my_events_sec my_notifications_sec">
+  <div class="my_events_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+    fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+    <div class="my_events_column" fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100"
+      fxFlex.xs="100" fxFlexFill>
+      <div class="my_event_box" *ngFor="let notify of notification">
+        <div class="event_box_left">
+          <div class="media">
+            <div class="media-left">
+              <img [src]="notify?.eventImage?.signedUrl" class="media-object">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{notify?.eventName}}</h4>
+              <p>Event Booking Confirmed</p>
+            </div>
+          </div>
+        </div>
+        <div class="event_box_right">
+          <p class="time"> {{notify?.eventDate.toDate() | date}}  <span *ngIf="!notify.hide">- {{notify?.eventEndDate.toDate() | date}}</span> , {{notify?.eventTime}} </p>
+        </div>
+      </div>
+
+      <!-- <div class="no_events_box" *ngIf="show">
+        <div class="w_100">
+          <h4>you did't have any notifications</h4> -->
+          <!-- <img src="../../../assets/images/no_events.png" alt=""> -->
+        <!-- </div>
+      </div> -->
+
+      <!-- <div class="my_event_box">
+        <div class="event_box_left">
+          <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/event_img.png" class="media-object">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Event name</h4>
+              <p>Event Boking Confirmed</p>
+            </div>
+          </div>
+        </div>
+        <div class="event_box_right">
+          <p class="time"> 10:30pm</p>
+        </div>
+      </div> -->
+      <!-- <div class="my_event_box">
+        <div class="event_box_left">
+          <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/event_img.png" class="media-object">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Event name</h4>
+              <p>Event Boking Confirmed</p>
+            </div>
+          </div>
+        </div>
+        <div class="event_box_right">
+          <p class="time"> 10:30pm</p>
+        </div>
+      </div> -->
+      <!-- <div class="my_event_box">
+        <div class="event_box_left">
+          <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/event_img.png" class="media-object">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Event name</h4>
+              <p>Event Boking Confirmed</p>
+            </div>
+          </div>
+        </div>
+        <div class="event_box_right">
+          <p class="time"> 10:30pm</p>
+        </div>
+      </div> -->
+      <!-- <div class="my_event_box">
+        <div class="event_box_left">
+          <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/event_img.png" class="media-object">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Event name</h4>
+              <p>Event Boking Confirmed</p>
+            </div>
+          </div>
+        </div>
+        <div class="event_box_right">
+          <p class="time"> 10:30pm</p>
+        </div>
+      </div> -->
+      <!-- <div class="my_event_box">
+        <div class="event_box_left">
+          <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/event_img.png" class="media-object">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Event name</h4>
+              <p>Event Boking Confirmed</p>
+            </div>
+          </div>
+        </div>
+        <div class="event_box_right">
+          <p class="time"> 10:30pm</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>

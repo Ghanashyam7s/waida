@@ -1,0 +1,4095 @@
+/* ------------------------------ BREAK-POINTS ------------------------------ */
+$breakpoint-xs-sm: "screen and (min-width:240px) and (max-width: 767px)";
+$breakpoint-xs: "screen and (min-width:240px) and (max-width: 599px)";
+$breakpoint-sm: "screen and (min-width:600px) and (max-width: 767px)";
+$breakpoint-md: "screen and (min-width:768px) and (max-width: 959px)";
+$breakpoint-md-lg: "screen and (min-width:960px) and (max-width: 991px)";
+$breakpoint-lg: "screen and (min-width:992px) and (max-width: 1199px)";
+$breakpoint-mac: "screen and (min-width:1200px) and (max-width: 1279px)";
+$breakpoint-xl: "screen and (min-width:1280px) and (max-width: 1365px)";
+$breakpoint-laptop: "screen and (min-width:1366px) and (max-width: 1366px)";
+$breakpoint-xxl: "screen and (min-width: 1370px)";
+
+.mobile-top-menu-show {
+  display: none !important;
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .banner-sec {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .banner-content {
+            .banner-btn {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .banner_container {
+      top: 10px !important;
+
+      .banner-content {
+        p {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .council_members_sec .council_members_slider .map_center .custom_council_slider .swiper-container .swiper-wrapper .swiper-slide .member_box {
+    width: 100%;
+    margin: 20px 0 0 0 !important;
+  }
+
+
+}
+
+/* ------------------ MOBILE-PHONES-VERTICAL-HORIZONTAL ------------------ */
+@media #{$breakpoint-xs-sm} {
+  .flag_cornor {
+    top: -15px;
+  }
+
+  .banner-sec .banner_container .banner-content .banner-btn {
+    min-width: 100px !important;
+    height: 25px !important;
+    line-height: 25px !important;
+  }
+
+  .banner-sec .banner_container .banner-content .banner-btn .mat-button-wrapper {
+    font-size: 15px !important;
+  }
+
+  .custom-snackbar {
+    width: 85% !important;
+    max-width: 85% !important;
+  }
+
+  .custom-modal {
+    max-width: 100vw !important;
+    width: 95% !important;
+  }
+
+  .custom_tabs {
+    margin: 20px 0 0 0;
+  }
+
+  .chakra_flag {
+    margin: 0 auto;
+    text-align: center;
+    float: none;
+  }
+
+  .custom_heading {
+    .title {
+      font-size: 26px;
+      margin-top: 18px;
+    }
+
+    p {
+      font-size: 14px;
+      width: 100%;
+      color: #21262c;
+      font-weight: 500;
+    }
+  }
+
+  .master_navbar_sec {
+    .header_main {
+      display: none !important;
+    }
+  }
+
+  .mobile_menu {
+    display: block !important;
+    background: red;
+
+    .mobile-navbar-sec {
+      height: 50px;
+      background: red;
+    }
+
+    // MOBILE-LOGO
+    .mobile-logo-box {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      z-index: 9999;
+      pointer-events: all;
+      outline: none;
+
+      img {
+        width: 50px;
+      }
+    }
+
+    // MOBILE-ACCORDION
+    .mobile-accordion {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding-top: 0;
+
+      .mat-accordion {
+        .mat-expansion-panel {
+          cursor: pointer !important;
+          background: #fff;
+          margin-bottom: 0 !important;
+          padding-left: 0;
+          box-shadow: none !important;
+          transition: none !important;
+          border-radius: 0px !important;
+          z-index: 999;
+
+          .mat-expansion-panel-header {
+            pointer-events: none;
+            cursor: pointer;
+            padding: 0 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+
+            .mat-content {
+              display: block !important;
+
+              .mat-expansion-panel-header-title {
+                float: right;
+                border: 1px solid $primary;
+                padding: 5px;
+                border-radius: 4px;
+                pointer-events: all;
+                line-height: 10px;
+                position: relative;
+                top: 0px;
+              }
+            }
+          }
+
+          .mat-expansion-panel-body {
+            padding: 0 !important;
+            border: 0 !important;
+            border-top: 1px solid #ccc !important;
+            background: #fff !important;
+            margin-top: -1px;
+            margin-left: -5px;
+            pointer-events: all;
+            z-index: 999;
+
+            .mat-expansion-panel-content {
+              background: #fff;
+              z-index: 999;
+            }
+
+            .top-right-nav {
+              width: 100%;
+              justify-content: center !important;
+              position: relative;
+              list-style: none;
+              background: #fff;
+              box-shadow: 5px 8.66px 60px 0 rgba(50, 117, 208, 0.25);
+              text-align: left;
+              overflow: hidden;
+              z-index: 999;
+
+              li {
+                display: block;
+                overflow: hidden;
+                text-transform: capitalize;
+                padding: 8px 0 8px 15px;
+                margin: 0;
+                position: relative;
+                transition: all 0.5s ease-in-out;
+                cursor: pointer;
+                border-bottom: 1px solid #e8e8ec;
+                text-align: left;
+
+                a {
+                  display: flex;
+                  justify-content: space-between;
+                  padding-right: 0;
+                  color: #242121;
+                  width: 100%;
+                  display: block;
+                  font-size: 14px;
+                  font-weight: 600;
+                  letter-spacing: 0.5px;
+
+                  i {
+                    display: none;
+                  }
+
+                  &.global-btn {
+                    width: 120px !important;
+                    padding: 0px 10px 0 10px !important;
+                    height: 34px !important;
+                    line-height: 34px !important;
+                    margin-left: 0;
+                    border: 1px solid #21262c !important;
+                    border-radius: 4px !important;
+                    background: transparent !important;
+
+                    .mat-button-wrapper {
+                      color: #21262c;
+                      font-weight: 500;
+                      font-size: 15px;
+                    }
+                  }
+                }
+
+                img {
+                  width: 15px;
+                }
+
+                &:hover {
+                  background-color: #fef0e4;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // MOBILE-TOOGLE-BTN
+    .mobile-toolbar-toggler {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+      text-indent: -9999px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-radius: none;
+      border: none;
+      cursor: pointer;
+      background: none;
+      outline: none !important;
+      width: 26px;
+      height: 26px;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+      pointer-events: all !important;
+
+      span {
+        display: block;
+        position: absolute;
+        top: 12px;
+        height: 2px;
+        min-height: 2px;
+        width: 100%;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        background: $primary;
+
+        &::before {
+          background: $primary;
+          top: -8px;
+          position: absolute;
+          display: block;
+          right: 0;
+          width: 100%;
+          height: 0px;
+          min-height: 2px;
+          content: "";
+          -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+        }
+
+        &::after {
+          transition: all 0.4s ease;
+          left: auto;
+          right: 0px;
+          width: 100%;
+          background: $primary;
+          bottom: -8px;
+          position: absolute;
+          display: block;
+          height: 0px;
+          min-height: 2px;
+          content: "";
+          -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+        }
+      }
+
+      &:hover {
+        span {
+          background: $primary !important;
+
+          &::before {
+            width: 100% !important;
+            background: $primary !important;
+          }
+
+          &::after {
+            width: 100% !important;
+            background: $primary !important;
+          }
+        }
+      }
+    }
+
+    .mat-expansion-indicator {
+      display: none;
+    }
+
+    .arrow-icon {
+      width: 12px;
+      margin-left: 5px;
+    }
+  }
+
+  .banner-sec {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .banner_overlay {
+            // display: none;
+          }
+        }
+      }
+    }
+
+    .banner_container {
+      top: 10%;
+      left: 10%;
+
+      .banner_full {
+        width: 100%;
+        // height: 100%;
+      }
+
+      .banner-content {
+        h1 {
+          font-size: 18px;
+          line-height: 24px;
+          padding: 0;
+          text-align: left;
+          opacity: 0.8;
+        }
+
+        p {
+          font-size: 13px;
+          margin: 0px 0;
+          width: 85%;
+          line-height: 16px;
+          font-weight: 500;
+          text-align: left;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .banner-img {
+      min-height: 100%;
+      max-height: 100%;
+      width: 100%;
+
+      img {
+        object-fit: contain;
+      }
+
+      video {
+        width: 100%;
+        // min-height: 150px;
+        // max-height: 150px;
+      }
+    }
+
+    .swiper-button-next {
+      right: -0px;
+      background: #fff;
+
+      &::after {
+        left: 0px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+
+    .swiper-button-prev {
+      left: 0px;
+      background: #fff;
+
+      &::after {
+        right: 0px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .about_us_sec {
+    min-height: 100%;
+    padding-bottom: 0 !important;
+
+    .flag_center {
+      background-position: center;
+    }
+
+    .about_head {
+      min-height: 100%;
+      margin-left: 0;
+
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            min-height: 100%;
+            display: block;
+
+            .swiper_content {
+              padding: 0;
+
+              p {
+                width: 100%;
+                font-size: 14px;
+                color: #21262c;
+                line-height: 24px;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // council_members_sec
+  .council_members_sec {
+    .wrapper {
+      width: 100%;
+    }
+
+    .council_members_slider {
+      .map_center {
+        .aus_map {
+          width: 100%;
+          height: 100%;
+        }
+
+        .council_member_list {
+          display: none;
+        }
+
+        // custom_council_slider
+        .custom_council_slider {
+          .swiper-container {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+
+            .swiper-wrapper {
+              .swiper-slide {
+                .member_box {
+                  width: 100%;
+                  margin: 25px 0 0 0;
+
+                  .member_content {
+                    h4 {
+                      font-size: 14px;
+                      font-weight: 600;
+                      margin: 0px 0 0 0;
+                      padding: 0;
+                    }
+
+                    h5 {
+                      font-weight: 700;
+                      font-size: 13px;
+                    }
+
+                    p {
+                      line-height: 14px;
+                      font-size: 12px;
+                      font-weight: 300;
+                      margin: 0px auto 0 auto;
+                      width: 80%;
+                    }
+
+                    // p {
+                    //   line-height: 22px;
+                    //   font-size: 14px;
+                    //   font-weight: 400;
+                    //   margin: 8px auto 0 auto;
+                    // }
+                  }
+                }
+              }
+            }
+          }
+
+          &.navigations {
+            .swiper-button-prev {
+              left: -10px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 5px;
+              }
+            }
+
+            .swiper-button-next {
+              right: 0px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .custom_council_slider {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .member_box {
+                .member_img {
+                  width: 40px;
+                  height: 40px;
+                  margin: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // .council_members_sec {
+  //   min-height: 100%;
+  //   margin: 0px 0 50px 0;
+  //   .map_center {
+  //     background-size: cover;
+  //     top: 20%;
+  //   }
+  //   .council_members_slider {
+  //     min-height: 100%;
+  //     .swiper-container {
+  //       min-height: 100%;
+  //       .swiper-wrapper {
+  //         height: 400px;
+  //         .swiper-slide {
+  //           .member_box {
+  //             width: 100%;
+  //             .member_content {
+  //               p {
+  //                 width: 100%;
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .map_center {
+  //       .aus_map {
+  //         width: 100%;
+  //       }
+  //       .council_member_list {
+  //         display: none;
+  //       }
+  //     }
+  //   }
+  //   .swiper-button-prev {
+  //     left: 0;
+  //   }
+  //   .swiper-button-next {
+  //     right: 0;
+  //   }
+  //   .council_members_sec .swiper-button-next,
+  //   .council_members_sec .swiper-button-prev {
+  //     top: 70%;
+  //   }
+  // }
+  .our_sponsors_sec {
+    .our_sponsors_slider {
+      .swiper-container {
+        .swiper-wrapper {
+          min-height: 100%;
+          margin-top: 50px;
+          margin-bottom: 50px;
+
+          .swiper-slide {
+            border-right: 0;
+            min-height: 100%;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .our_testimonial_sec {
+    .our_testimonial_slider {
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            .testimonial-card {
+              .content {
+                p {
+                  color: #21262c;
+                  font-size: 15px;
+                  width: 100%;
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .latest_news_sec {
+    .latest_news_row {
+      .latest_news_leftcolumn {
+        .latest_news_content {
+          .title {
+            font-size: 24px;
+            width: 100%;
+            line-height: 28px;
+            margin-bottom: 30px;
+          }
+
+          .news_listing {
+            li {
+              .news_content {
+                h4 {
+                  width: 100%;
+                  font-size: 16px;
+                  line-height: 24px;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .latest_news_rightcolumn {
+        .feed-iframe-box {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .gallery_sec {
+    .gallery_row {
+      margin: 20px 0 0 0;
+      display: block !important;
+
+      .gallery_right_column {
+        .gallery_content_box {
+          padding: 15px 10px;
+          margin-left: 0px;
+
+          .media {
+            .media-body {
+              .event_head {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      .calender.custom_calender {
+        .mat-calendar {
+          .mat-calendar-content {
+            .mat-calendar-body-cell-content {
+              top: 15px;
+              left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer_sec {
+    padding: 50px 0 20px 0;
+
+    .footer_logo {
+      img {
+        // width: 100%;
+      }
+    }
+  }
+
+  .master_aboutus_sec {
+    .about_us_sec {
+      .about_stepper_row {
+        margin: 100px 0 0 0px;
+
+        .custom_about_stepper {
+          .about_stepper_content {
+            p {
+              width: 100%;
+              color: #21262c;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .mat-horizontal-content-container {
+          padding: 0 0 0 0;
+        }
+
+        .year {
+          right: 0 !important;
+          font-size: 18px !important;
+        }
+      }
+    }
+  }
+
+  .custom_tabs {
+    .mat-tab-group {
+      .mat-tab-header {
+        .mat-tab-labels {
+          .mat-tab-label {
+            padding: 0 10px;
+
+            .mat-tab-label-content {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_form {
+        .custom_radio_btns {
+          .mat-radio-group {
+            width: 100%;
+            // display: flex;
+            overflow: hidden;
+            justify-content: space-between;
+
+            .mat-radio-button {
+              padding: 8px 5px;
+              margin: 0 5px 20px 0;
+              max-width: 225px;
+              min-width: 225px;
+
+              .mat-radio-label {
+                padding-left: 10px;
+              }
+
+              .mat-radio-label-content {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+
+      .membership_benefits_flex {
+        margin: 0px 0;
+        flex-direction: column-reverse !important;
+
+        .membership_benefits_leftcolumn {
+          .benefits_content_box {
+            h4 {
+              width: 100%;
+              font-size: 20px;
+            }
+
+            p {
+              padding: 0 0px 0 0;
+              color: #21262c;
+            }
+          }
+        }
+
+        .membership_benefits_rightcolumn {
+          .benefits_img {
+            float: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            margin-top: 25px;
+          }
+        }
+      }
+
+      .media_group_row {
+        h4 {
+          width: 100%;
+        }
+
+        p {
+          padding: 0 0px 0 0;
+        }
+      }
+    }
+  }
+
+  .no_events_box {
+    margin-left: 0;
+    min-height: 100%;
+  }
+
+  .bottom_footer_sec {
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .master_eventgallery_sec {
+    .eventgallery_sec {
+      .upcoming_events_sec {
+        .upcoming_events_row {
+          .upcoming_events_box {
+            margin: 0px 0px 20px 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .upcoming_events_sec {
+    margin-top: 30px;
+  }
+
+  .master_profile_sec {
+    .profile_row {
+      .profile_left {
+        .profile_listing {
+          padding: 10px 0;
+          min-height: 100%;
+        }
+      }
+
+      .profile_right {
+        .profile_router_outlet {
+          padding: 10px;
+
+          .my_events_sec {
+            .my_events_row {
+              .my_event_box {
+                height: 100%;
+                width: 100%;
+                padding: 10px 10px;
+                display: block;
+                position: relative;
+
+                .event_box_left {
+                  .media {
+                    padding: 0px 0 10px 0px;
+                  }
+
+                  .time {
+                    font-size: 13px;
+                    font-weight: 500;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer_sec {
+    .footer_heading {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .my_subscriptions_row {
+    .my_subscriptions_column {
+      .my_subscriptions_box {
+        .plan_details {
+          padding: 10px 0 0 0;
+          margin: 10px 0 0 0;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  .master_contactus_sec {
+    .contact_us_sec {
+      .contact_us_row {
+        .contact_us_right {
+          margin: 0px 0 50px 0;
+        }
+      }
+    }
+  }
+
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_details_row {
+        .event_details_leftcolumn {
+          .event_address {
+            .custom_group {
+              display: flex;
+              align-items: flex-start;
+
+              label {
+                font-size: 14px;
+                display: flex;
+                min-width: 120px;
+              }
+
+              span {
+                font-size: 14px;
+                letter-spacing: 0;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        .event_details_rightcolumn {
+          .membership_form {
+            padding-left: 0;
+            border-left: 0;
+            height: 100%;
+          }
+        }
+      }
+
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: 100%;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            margin-left: 0;
+
+            .custom_description_heading {
+              h4 {
+                width: 100% !important;
+              }
+            }
+
+            .custom_description_heading {
+              p {
+                margin: 0px 0 0 0;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .swiper-container {
+            .swiper-wrapper {
+              padding: 0;
+              min-height: auto;
+              margin: 0 auto;
+              text-align: center;
+              justify-content: center;
+
+              .swiper-slide {
+                width: 100% !important;
+
+                img {
+                  border-radius: 15px;
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .event_details_rightcolumn{
+    .membership_form{
+      .reg_btn{
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+/* ------------------------------ MOBILE-PHONES-VERTICAL -------------------- */
+@media #{$breakpoint-xs} {
+
+  // .flag_cornor {
+  //   top: 0;
+  // }
+  .sec_padding {
+    padding: 20px 0 20px 0;
+  }
+
+  .banner-sec {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .banner-img {
+            img {
+              height: auto;
+              // object-fit: initial;
+            }
+          }
+
+          .banner-content {
+
+            // margin-top: 50px;
+            // padding-left: 35px;
+            .banner-btn {
+              margin-top: 10px;
+              height: 26px !important;
+              line-height: 24px !important;
+              min-width: 60px !important;
+              padding: 0 5px !important;
+
+              .mat-button-wrapper {
+                font-size: 14px;
+              }
+            }
+          }
+
+          .banner_overlay {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmember_sec {
+    .ourmember_sec {
+      .our_member_listing {
+        ul {
+          display: block;
+          flex-wrap: wrap;
+
+          li {
+            width: 100%;
+
+            .member_box {
+              .member_img {
+                .overlay {
+                  margin: 0 auto;
+                  background-position: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_oursponsors_sec {
+    .our_sponsors_sec {
+      .our_sponsors_row {
+        .our_sponsors_listing {
+          ul {
+            li {
+              width: 50%;
+              border: 0 !important;
+              margin: 0px auto 15px auto;
+            }
+          }
+        }
+      }
+
+      .event_description_row {
+        margin-top: 50px;
+        display: block !important;
+
+        .event_description_leftcolumn {
+          max-width: 75% !important;
+          margin: 0 auto !important;
+        }
+      }
+    }
+  }
+
+  .login_modal {
+    .login_row {
+      .custom_tabs {
+        .login_form {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .profile-dropdown {
+    min-width: 300px !important;
+    max-width: 300px !important;
+  }
+
+  .my_notifications_sec {
+    .event_box_right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .login_modal {
+    .login_row {
+      .custom_tabs {
+        .login_form {
+          .login_form_box {
+            width: 90%;
+          }
+        }
+      }
+
+      .right_btn_flex {
+        .right_btn {
+          .mat-button-wrapper {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  .membership_form {
+    ul {
+      width: 100%;
+      display: block;
+
+      li {
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  .banner-sec {
+    .banner_container {
+      .banner_full {
+        height: 100%;
+      }
+    }
+  }
+}
+
+/* ------------------------------ MOBILE-PHONES-HORIZONTAL ---------------- */
+@media #{$breakpoint-sm} {
+  .sec_padding {
+    padding: 20px 0 20px 0;
+  }
+
+  .footer_row {
+    flex-wrap: wrap !important;
+
+    .footer_column {
+      margin-right: 0 !important;
+    }
+  }
+
+  .council_members_sec {
+    .map_center {
+      background-size: contain;
+    }
+
+    .council_members_slider {
+      .swiper-container {
+        .swiper-wrapper {
+          height: 300px;
+
+          .swiper-slide {
+            .member_box {
+              .member_content {
+                p {
+                  width: 80%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      left: 10px;
+    }
+
+    .swiper-button-next {
+      right: 20px;
+    }
+  }
+
+  .gallery_sec {
+    .gallery_row {
+      .gallery_left_column {
+        max-width: 70% !important;
+        max-width: 70% !important;
+        margin: 0 auto !important;
+      }
+
+      .gallery_right_column {
+        max-width: 70% !important;
+        margin: 0 auto !important;
+      }
+
+      .calender {}
+    }
+  }
+
+  .latest_news_sec {
+    .latest_news_row {
+      display: block !important;
+
+      .latest_news_leftcolumn {
+        max-width: 80% !important;
+        justify-content: center;
+        margin: 0 auto 25px auto !important;
+      }
+
+      .latest_news_rightcolumn {
+        max-width: 80% !important;
+        justify-content: center;
+        margin: 0 auto 0px auto !important;
+      }
+    }
+  }
+
+  .master_eventgallery_sec {
+    .eventgallery_sec {
+      .upcoming_events_sec {
+        .upcoming_events_row {
+          display: block !important;
+
+          .upcoming_events_column {
+            display: block !important;
+            margin: 0 auto 15px auto !important;
+            max-width: 75% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmember_sec {
+    .ourmember_sec {
+      .our_member_listing {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 45%;
+
+            .member_box {
+              .member_img {
+                .overlay {
+                  margin: 0 auto;
+                  background-position: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_oursponsors_sec {
+    .our_sponsors_sec {
+      .our_sponsors_row {
+        .our_sponsors_listing {
+          ul {
+            li {
+              width: 43%;
+              border: 0 !important;
+              margin: 0px 12px 15px 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .login_modal {
+    .login_row {
+      .custom_tabs {
+        .login_form {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .profile-dropdown {
+    min-width: 300px !important;
+    max-width: 300px !important;
+  }
+
+  .master_ourgallery_sec {
+    .our_gallery_sec {
+      .gallery_row {
+        .gallery_column {
+          .our_gallery_box {
+            .gallery_content {
+              height: 40px;
+              line-height: 40px;
+
+              h4 {
+                font-size: 15px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_form {
+        .custom_radio_btns {
+          .mat-radio-group {
+            justify-content: center;
+
+            .mat-radio-button {
+              margin: 0 20px 20px 0;
+            }
+          }
+        }
+      }
+
+      .membership_benefits_flex {
+        display: block !important;
+
+        .membership_benefits_leftcolumn {
+          max-width: 100% !important;
+        }
+
+        .membership_benefits_rightcolumn {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .our_membership_column {
+    max-width: 100% !important;
+  }
+
+  .member_sponsors_row {
+    display: block !important;
+
+    .member_sponsors_column {
+      max-width: 65% !important;
+      margin: 0 auto !important;
+    }
+  }
+
+  .master_profile_sec {
+    .profile_row {
+      .profile_left {
+        .profile_listing {
+          padding: 10px 0;
+          min-height: 100%;
+        }
+      }
+
+      .profile_right {
+        .profile_router_outlet {
+          padding: 10px;
+
+          .my_events_sec {
+            .my_events_row {
+              .my_event_box {
+                height: 100%;
+                padding: 10px 10px;
+                display: block;
+                position: relative;
+
+                .event_box_left {
+                  .media {
+                    padding: 0px 0 10px 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .my_notifications_sec {
+    .event_box_right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_details_row {
+        margin-top: 0;
+        display: block !important;
+
+        .event_details_leftcolumn {
+          max-width: 75% !important;
+          margin: 0 auto !important;
+        }
+
+        .event_details_rightcolumn {
+          max-width: 75% !important;
+          margin: 0 auto !important;
+        }
+      }
+    }
+  }
+}
+
+/* --------------------- I-PAD-HORIZONTAL-LAPTOPS-TABLETS ------------------- */
+@media #{$breakpoint-md} {
+  .master_router_outlet {
+    min-height: auto !important;
+  }
+
+  .custom_heading {
+    p {
+      font-size: 14px;
+      line-height: 26px;
+      margin: 15px auto;
+      width: 100%;
+    }
+  }
+
+  .sec_padding {
+    padding: 20px 0 20px 0;
+  }
+
+  .footer_row {
+    flex-wrap: wrap !important;
+    padding: 15px 0;
+
+    .footer_column {
+      margin-right: 0 !important;
+    }
+  }
+
+  .login_modal {
+    .login_row {
+      .custom_tabs {
+        .login_form {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .custom-modal {
+    max-width: 80vw !important;
+    width: 80% !important;
+  }
+
+  .wrapper {
+    width: 95% !important;
+  }
+
+  .master_navbar_sec {
+    .top_header {
+      .wrapper {
+        .top_ul {
+          li {
+            a {
+              margin-right: 10px !important;
+              font-size: 12px !important;
+            }
+          }
+        }
+
+        .top_right_list {
+          .contact_btn {
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+
+    .main_top_navbar {
+      .header_main {
+        .header_row {
+          .main-logo {
+            width: 100px;
+          }
+
+          .header_bottom_navbar {
+            li {
+              a {
+                font-size: 14px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // council_members_sec
+  .council_members_sec {
+    .wrapper {
+      width: 100%;
+    }
+
+    .council_members_slider {
+      .map_center {
+        .aus_map {
+          width: 100%;
+          height: 100%;
+        }
+
+        .council_member_list {
+          display: none;
+        }
+
+        // custom_council_slider
+        .custom_council_slider {
+          .swiper-container {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+
+            .swiper-wrapper {
+              .swiper-slide {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 70%;
+                height: 70%;
+
+                .member_box {
+                  width: 100%;
+                  margin: 25px 0 0 0;
+
+                  .member_content {
+                    h4 {
+                      font-size: 14px;
+                      font-weight: 600;
+                      margin: 0px 0 0 0;
+                      padding: 0;
+                    }
+
+                    h5 {
+                      font-weight: 700;
+                      font-size: 13px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &.navigations {
+            .swiper-button-prev {
+              left: -10px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 5px;
+              }
+            }
+
+            .swiper-button-next {
+              right: 0px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .custom_council_slider {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .member_box {
+                .member_img {
+                  // width: 40px;
+                  // height: 40px;
+                  // margin: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-sec {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .banner_overlay {
+            // display: none;
+          }
+        }
+      }
+    }
+
+    .banner_container {
+      left: 10%;
+
+      .banner_full {
+        width: 100%;
+        height: auto;
+      }
+
+      .banner-content {
+        h1 {
+          font-size: 32px;
+          line-height: 24px;
+        }
+
+        P {
+          width: 75%;
+          margin: 0px 0 20px 0;
+        }
+      }
+    }
+
+    .banner-img {
+      min-height: 100%;
+      max-height: 100%;
+      width: 100%;
+
+      img {
+        object-fit: contain;
+      }
+
+      video {
+        width: 100%;
+        // min-height: 150px;
+        // max-height: 150px;
+      }
+    }
+
+    .swiper-button-next {
+      right: -15px;
+      background: #fff;
+
+      &::after {
+        left: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -15px;
+      background: #fff;
+
+      &::after {
+        right: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .council_members_sec {
+    .swiper-button-prev {
+      left: 10%;
+    }
+
+    .swiper-button-next {
+      right: 10%;
+    }
+  }
+
+  .no_events_box {
+    min-height: 50vh;
+  }
+
+  .our_testimonial_sec {
+    .our_testimonial_slider {
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {}
+        }
+      }
+    }
+  }
+
+  .latest_news_sec {
+    .latest_news_row {
+      .latest_news_leftcolumn {
+        .latest_news_content {
+          .title {
+            font-size: 20px;
+            width: 100%;
+            margin: 0 0 20px 0;
+          }
+        }
+
+        .news_listing {
+          li {
+            .news_content {
+              h4 {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_head {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .swiper_content {
+            p {
+              width: 100%;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_us_sec {
+    .about_head {
+      min-height: max-content;
+
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            .swiper_content {
+              p {
+                width: 100%;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_aboutus_sec {
+    .about_us_sec {
+      .about_head {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .swiper_content {
+                p {
+                  width: 100%;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .about_stepper_row {
+        margin: 100px 0 0 0px !important;
+
+        .about_stepper_content {
+          p {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmember_sec {
+    .ourmember_sec {
+      .our_member_listing {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 45%;
+
+            .member_box {
+              .member_img {
+                .overlay {
+                  margin: 0 auto;
+                  background-position: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_form {
+        .custom_radio_btns {
+          .mat-radio-group {
+            justify-content: center;
+
+            .mat-radio-button {
+              margin: 0 20px 20px 0;
+            }
+          }
+        }
+      }
+
+      .membership_benefits_flex {
+        display: block !important;
+
+        .membership_benefits_leftcolumn {
+          max-width: 100% !important;
+        }
+
+        .membership_benefits_rightcolumn {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .master_ourgallery_sec {
+    .our_gallery_sec {
+      .gallery_row {
+        .gallery_column {
+          .our_gallery_box {
+            .gallery_content {
+              height: 40px;
+              line-height: 40px;
+
+              h4 {
+                font-size: 15px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_oursponsors_sec {
+    .our_sponsors_sec {
+      .our_sponsors_row {
+        .our_sponsors_listing {
+          ul {
+            li {
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .our_membership_column {
+    max-width: 90% !important;
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_benefits_flex {
+        .membership_benefits_rightcolumn {
+          .benefits_img {
+            float: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+          }
+        }
+
+        .membership_benefits_leftcolumn {
+          .benefits_content_box {
+            p {
+              padding: 0 0px 0 0;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      .media_group_row {
+        p {
+          font-size: 15px;
+          padding: 0 0px 0 0;
+        }
+      }
+    }
+  }
+
+  .master_profile_sec {
+    .profile_row {
+      .profile_left {
+        .profile_listing {
+          padding: 10px 0;
+          min-height: 100%;
+        }
+      }
+
+      .profile_right {
+        .profile_router_outlet {
+          padding: 0px 25px 20px 25px;
+
+          .my_events_sec {
+            .my_events_row {
+              .my_event_box {
+                height: 100%;
+                padding: 10px 10px;
+                display: block;
+                position: relative;
+
+                .event_box_left {
+                  .media {
+                    padding: 0px 0 10px 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .my_notifications_sec {
+    .event_box_right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .upcoming_events_sec {
+    margin: 50px 0 0 0;
+  }
+
+  .master_eventgallery_sec {
+    .eventgallery_sec {
+      .upcoming_events_sec {
+        .upcoming_events_row {
+          margin: 0px 0;
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .swiper-container {
+            .swiper-wrapper {
+              padding: 0;
+              min-height: auto;
+              margin: 0 auto;
+              text-align: center;
+              justify-content: center;
+
+              .swiper-slide {
+                width: 100% !important;
+
+                img {
+                  border-radius: 15px;
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .event_details_rightcolumn{
+    .membership_form{
+      .reg_btn{
+        margin: 0 auto;
+      }
+    }
+  }
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: auto;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            .custom_description_heading {
+              h4 {
+                width: 100%;
+              }
+
+              p {
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec{
+    .event_details_sec{
+      .event_details_row{
+        .event_details_rightcolumn{
+          .membership_form{
+            padding-left: 10px;
+          }
+        }
+      }
+      .event_description_row{
+        .event_description_rightcolumn{
+          .description_content{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --------------------- MEDIUM-LARGE-SCREEN ------------------- */
+@media #{$breakpoint-md-lg} {
+  .master_router_outlet {
+    min-height: auto !important;
+  }
+
+  .custom_heading {
+    p {
+      font-size: 14px;
+      line-height: 26px;
+      margin: 15px auto;
+      width: 100%;
+    }
+  }
+
+  .sec_padding {
+    padding: 20px 0 20px 0;
+  }
+
+  .footer_row {
+    flex-wrap: wrap !important;
+    padding: 15px 0;
+
+    .footer_column {
+      margin-right: 0 !important;
+    }
+  }
+
+  .login_modal {
+    .login_row {
+      .custom_tabs {
+        .login_form {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .custom-modal {
+    max-width: 80vw !important;
+    width: 80% !important;
+  }
+
+  .wrapper {
+    width: 95% !important;
+  }
+
+  .master_navbar_sec {
+    .top_header {
+      .wrapper {
+        .top_ul {
+          li {
+            a {
+              margin-right: 10px !important;
+              font-size: 12px !important;
+            }
+          }
+        }
+
+        .top_right_list {
+          .contact_btn {
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+
+    .main_top_navbar {
+      .header_main {
+        .header_row {
+          .main-logo {
+            width: 100px;
+          }
+
+          .header_bottom_navbar {
+            li {
+              a {
+                font-size: 14px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // council_members_sec
+  .council_members_sec {
+    .wrapper {
+      width: 100%;
+    }
+
+    .council_members_slider {
+      .map_center {
+        .aus_map {
+          width: 100%;
+          height: 100%;
+        }
+
+        .council_member_list {
+          display: none;
+        }
+
+        // custom_council_slider
+        .custom_council_slider {
+          .swiper-container {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+
+            .swiper-wrapper {
+              .swiper-slide {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 70%;
+                height: 70%;
+
+                .member_box {
+                  width: 100%;
+                  margin: 25px 0 0 0;
+
+                  .member_content {
+                    h4 {
+                      font-size: 14px;
+                      font-weight: 600;
+                      margin: 0px 0 0 0;
+                      padding: 0;
+                    }
+
+                    h5 {
+                      font-weight: 700;
+                      font-size: 13px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &.navigations {
+            .swiper-button-prev {
+              left: -10px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 5px;
+              }
+            }
+
+            .swiper-button-next {
+              right: 0px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .custom_council_slider {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .member_box {
+                .member_img {
+                  // width: 40px;
+                  // height: 40px;
+                  // margin: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-sec {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .banner_overlay {
+            // display: none;
+          }
+        }
+      }
+    }
+
+    .banner_container {
+      left: 10%;
+
+      .banner_full {
+        width: 100%;
+        height: auto;
+      }
+
+      .banner-content {
+        h1 {
+          font-size: 32px;
+          line-height: 24px;
+        }
+
+        P {
+          width: 75%;
+          margin: 0px 0 20px 0;
+        }
+      }
+    }
+
+    .banner-img {
+      min-height: 100%;
+      max-height: 100%;
+      width: 100%;
+
+      img {
+        object-fit: contain;
+      }
+
+      video {
+        width: 100%;
+        // min-height: 150px;
+        // max-height: 150px;
+      }
+    }
+
+    .swiper-button-next {
+      right: -15px;
+      background: #fff;
+
+      &::after {
+        left: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -15px;
+      background: #fff;
+
+      &::after {
+        right: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .council_members_sec {
+    .swiper-button-prev {
+      left: 10%;
+    }
+
+    .swiper-button-next {
+      right: 10%;
+    }
+  }
+
+  .no_events_box {
+    min-height: 50vh;
+  }
+
+  .our_testimonial_sec {
+    .our_testimonial_slider {
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {}
+        }
+      }
+    }
+  }
+
+  .latest_news_sec {
+    .latest_news_row {
+      .latest_news_leftcolumn {
+        .latest_news_content {
+          .title {
+            font-size: 20px;
+            width: 100%;
+            margin: 0 0 20px 0;
+          }
+        }
+
+        .news_listing {
+          li {
+            .news_content {
+              h4 {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_head {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .swiper_content {
+            p {
+              width: 100%;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_us_sec {
+    .about_head {
+      min-height: max-content;
+
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            .swiper_content {
+              p {
+                width: 100%;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_aboutus_sec {
+    .about_us_sec {
+      .about_head {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .swiper_content {
+                p {
+                  width: 100%;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .about_stepper_row {
+        margin: 100px 0 0 0px !important;
+
+        .about_stepper_content {
+          p {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmember_sec {
+    .ourmember_sec {
+      .our_member_listing {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 45%;
+
+            .member_box {
+              .member_img {
+                .overlay {
+                  margin: 0 auto;
+                  background-position: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_form {
+        .custom_radio_btns {
+          .mat-radio-group {
+            justify-content: center;
+
+            .mat-radio-button {
+              margin: 0 20px 20px 0;
+            }
+          }
+        }
+      }
+
+      .membership_benefits_flex {
+        display: block !important;
+
+        .membership_benefits_leftcolumn {
+          max-width: 100% !important;
+        }
+
+        .membership_benefits_rightcolumn {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .master_ourgallery_sec {
+    .our_gallery_sec {
+      .gallery_row {
+        .gallery_column {
+          .our_gallery_box {
+            .gallery_content {
+              height: 40px;
+              line-height: 40px;
+
+              h4 {
+                font-size: 15px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_oursponsors_sec {
+    .our_sponsors_sec {
+      .our_sponsors_row {
+        .our_sponsors_listing {
+          ul {
+            li {
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .our_membership_column {
+    max-width: 90% !important;
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_benefits_flex {
+        .membership_benefits_rightcolumn {
+          .benefits_img {
+            float: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+          }
+        }
+
+        .membership_benefits_leftcolumn {
+          .benefits_content_box {
+            p {
+              padding: 0 0px 0 0;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      .media_group_row {
+        p {
+          font-size: 15px;
+          padding: 0 0px 0 0;
+        }
+      }
+    }
+  }
+
+  .master_profile_sec {
+    .profile_row {
+      .profile_left {
+        .profile_listing {
+          padding: 10px 0;
+          min-height: 100%;
+        }
+      }
+
+      .profile_right {
+        .profile_router_outlet {
+          padding: 0px 25px 20px 25px;
+
+          .my_events_sec {
+            .my_events_row {
+              .my_event_box {
+                height: 100%;
+                padding: 10px 10px;
+                display: block;
+                position: relative;
+
+                .event_box_left {
+                  .media {
+                    padding: 0px 0 10px 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .my_notifications_sec {
+    .event_box_right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .upcoming_events_sec {
+    margin: 50px 0 0 0;
+  }
+
+  .master_eventgallery_sec {
+    .eventgallery_sec {
+      .upcoming_events_sec {
+        .upcoming_events_row {
+          margin: 0px 0;
+        }
+      }
+    }
+  }
+
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: auto;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            .custom_description_heading {
+              h4 {
+                width: 100%;
+              }
+
+              p {
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: auto;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            .custom_description_heading {
+              h4 {
+                width: 100%;
+              }
+
+              p {
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec{
+    .event_details_sec{
+      .event_details_row{
+        .event_details_rightcolumn{
+          .membership_form{
+            padding-left: 10px;
+          }
+        }
+      }
+      .event_description_row{
+        .event_description_rightcolumn{
+          .description_content{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --------------------- LARGE-SCREEN ------------------- */
+@media #{$breakpoint-lg} {
+  .master_router_outlet {
+    min-height: auto !important;
+  }
+
+  .custom_heading {
+    p {
+      font-size: 14px;
+      line-height: 26px;
+      margin: 15px auto;
+      width: 100%;
+    }
+  }
+
+  .sec_padding {
+    padding: 20px 0 20px 0;
+  }
+
+  .footer_row {
+    flex-wrap: wrap !important;
+    padding: 15px 0;
+
+    .footer_column {
+      margin-right: 0 !important;
+    }
+  }
+
+  .login_modal {
+    .login_row {
+      .custom_tabs {
+        .login_form {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .custom-modal {
+    width: 60% !important;
+  }
+
+  .wrapper {
+    width: 95% !important;
+  }
+
+  .master_navbar_sec {
+    .top_header {
+      .wrapper {
+        .top_ul {
+          li {
+            a {
+              margin-right: 10px !important;
+              font-size: 12px !important;
+            }
+          }
+        }
+
+        .top_right_list {
+          .contact_btn {
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+
+    .main_top_navbar {
+      .header_main {
+        .header_row {
+          .main-logo {
+            width: 100px;
+          }
+
+          .header_bottom_navbar {
+            li {
+              a {
+                font-size: 14px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // council_members_sec
+  .council_members_sec {
+    .wrapper {
+      width: 100%;
+    }
+
+    .council_members_slider {
+      .map_center {
+        .aus_map {
+          // width: 100%;
+          // height: 100%;
+        }
+
+        .council_member_list {
+          display: none;
+        }
+
+        // custom_council_slider
+        .custom_council_slider {
+          .swiper-container {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+
+            .swiper-wrapper {
+              .swiper-slide {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 70%;
+                height: 70%;
+
+                .member_box {
+                  width: 100%;
+                  margin: 25px 0 0 0;
+
+                  .member_content {
+                    h4 {
+                      font-size: 14px;
+                      font-weight: 600;
+                      margin: 0px 0 0 0;
+                      padding: 0;
+                    }
+
+                    h5 {
+                      font-weight: 700;
+                      font-size: 13px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &.navigations {
+            .swiper-button-prev {
+              left: -10px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 5px;
+              }
+            }
+
+            .swiper-button-next {
+              // right: 0px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .custom_council_slider {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .member_box {
+                .member_img {
+                  // width: 40px;
+                  // height: 40px;
+                  // margin: 5px;
+                }
+
+                .member_content {
+                  p {
+                    width: 60%;
+                    font-size: 16px;
+                    font-weight: 400;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-sec {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .banner_overlay {
+            // display: none;
+          }
+        }
+      }
+    }
+
+    .banner_container {
+      left: 10%;
+
+      .banner_full {
+        width: 100%;
+        height: auto;
+      }
+
+      .banner-content {
+        h1 {
+          font-size: 32px;
+          line-height: 24px;
+        }
+
+        P {
+          width: 75%;
+          margin: 0px 0 20px 0;
+        }
+      }
+    }
+
+    .banner-img {
+      min-height: 100%;
+      max-height: 100%;
+      width: 100%;
+
+      img {
+        object-fit: contain;
+      }
+
+      video {
+        width: 100%;
+        // min-height: 150px;
+        // max-height: 150px;
+      }
+    }
+
+    .swiper-button-next {
+      right: -15px;
+      background: #fff;
+
+      &::after {
+        left: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -15px;
+      background: #fff;
+
+      &::after {
+        right: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .council_members_sec {
+    .swiper-button-prev {
+      left: 10% !important;
+    }
+
+    .swiper-button-next {
+      right: 10% !important;
+    }
+  }
+
+  .no_events_box {
+    min-height: 50vh;
+  }
+
+  .our_testimonial_sec {
+    .our_testimonial_slider {
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {}
+        }
+      }
+    }
+  }
+
+  .latest_news_sec {
+    .latest_news_row {
+      .latest_news_leftcolumn {
+        .latest_news_content {
+          .title {
+            font-size: 20px;
+            width: 100%;
+            margin: 0 0 20px 0;
+          }
+        }
+
+        .news_listing {
+          li {
+            .news_content {
+              h4 {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_head {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .swiper_content {
+            p {
+              width: 100%;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_us_sec {
+    .about_head {
+      min-height: max-content;
+
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            .swiper_content {
+              p {
+                width: 100%;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_aboutus_sec {
+    .about_us_sec {
+      .about_head {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .swiper_content {
+                p {
+                  width: 100%;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .about_stepper_row {
+        margin: 100px 0 0 0px !important;
+
+        .about_stepper_content {
+          p {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmember_sec {
+    .ourmember_sec {
+      .our_member_listing {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 45%;
+
+            .member_box {
+              .member_img {
+                .overlay {
+                  margin: 0 auto;
+                  background-position: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_form {
+        .custom_radio_btns {
+          .mat-radio-group {
+            justify-content: center;
+
+            .mat-radio-button {
+              margin: 0 20px 20px 0;
+            }
+          }
+        }
+      }
+
+      .membership_benefits_flex {
+        display: block !important;
+
+        .membership_benefits_leftcolumn {
+          max-width: 100% !important;
+        }
+
+        .membership_benefits_rightcolumn {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .master_ourgallery_sec {
+    .our_gallery_sec {
+      .gallery_row {
+        .gallery_column {
+          .our_gallery_box {
+            .gallery_content {
+              height: 40px;
+              line-height: 40px;
+
+              h4 {
+                font-size: 15px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_oursponsors_sec {
+    .our_sponsors_sec {
+      .our_sponsors_row {
+        .our_sponsors_listing {
+          ul {
+            li {
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .our_membership_column {
+    max-width: 90% !important;
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_benefits_flex {
+        .membership_benefits_rightcolumn {
+          .benefits_img {
+            float: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+          }
+        }
+
+        .membership_benefits_leftcolumn {
+          .benefits_content_box {
+            p {
+              padding: 0 0px 0 0;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      .media_group_row {
+        p {
+          font-size: 15px;
+          padding: 0 0px 0 0;
+        }
+      }
+    }
+  }
+
+  .master_profile_sec {
+    .profile_row {
+      .profile_left {
+        .profile_listing {
+          padding: 10px 0;
+          min-height: 100%;
+        }
+      }
+
+      .profile_right {
+        .profile_router_outlet {
+          padding: 0px 25px 20px 25px;
+
+          .my_events_sec {
+            .my_events_row {
+              .my_event_box {
+                height: 100%;
+                padding: 10px 10px;
+                display: block;
+                position: relative;
+
+                .event_box_left {
+                  .media {
+                    padding: 0px 0 10px 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .my_notifications_sec {
+    .event_box_right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .upcoming_events_sec {
+    margin: 50px 0 0 0;
+  }
+
+  .master_eventgallery_sec {
+    .eventgallery_sec {
+      .upcoming_events_sec {
+        .upcoming_events_row {
+          margin: 0px 0;
+        }
+      }
+    }
+  }
+
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: auto;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            .custom_description_heading {
+              h4 {
+                width: 100%;
+              }
+
+              p {
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: auto;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            .custom_description_heading {
+              h4 {
+                width: 100%;
+              }
+
+              p {
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec{
+    .event_details_sec{
+      .event_details_row{
+        .event_details_rightcolumn{
+          .membership_form{
+            padding-left: 10px;
+          }
+        }
+      }
+      .event_description_row{
+        .event_description_rightcolumn{
+          .description_content{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// /* --------------------- MAC-SCREEN ------------------- */
+@media #{$breakpoint-mac} {
+  .master_router_outlet {
+    min-height: auto !important;
+  }
+
+  .custom_heading {
+    p {
+      font-size: 14px;
+      line-height: 26px;
+      margin: 15px auto;
+      width: 100%;
+    }
+  }
+
+  .sec_padding {
+    padding: 20px 0 20px 0;
+  }
+
+  .footer_row {
+    flex-wrap: wrap !important;
+    padding: 15px 0;
+
+    .footer_column {
+      margin-right: 0 !important;
+    }
+  }
+
+  .login_modal {
+    .login_row {
+      .custom_tabs {
+        .login_form {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .custom-modal {
+    max-width: 80vw !important;
+    width: 80% !important;
+  }
+
+  .wrapper {
+    width: 95% !important;
+  }
+
+  .master_navbar_sec {
+    .top_header {
+      .wrapper {
+        .top_ul {
+          li {
+            a {
+              margin-right: 10px !important;
+              font-size: 12px !important;
+            }
+          }
+        }
+
+        .top_right_list {
+          .contact_btn {
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+
+    .main_top_navbar {
+      .header_main {
+        .header_row {
+          .main-logo {
+            width: 100px;
+          }
+
+          .header_bottom_navbar {
+            li {
+              a {
+                font-size: 14px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // council_members_sec
+  .council_members_sec {
+    .wrapper {
+      width: 100%;
+    }
+
+    .council_members_slider {
+      .map_center {
+        .aus_map {
+          // width: 100%;
+          // height: 100%;
+        }
+
+        .council_member_list {
+          display: none;
+        }
+
+        // custom_council_slider
+        .custom_council_slider {
+          .swiper-container {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+
+            .swiper-wrapper {
+              .swiper-slide {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 70%;
+                height: 70%;
+
+                .member_box {
+                  width: 100%;
+                  margin: 25px 0 0 0;
+
+                  .member_content {
+                    h4 {
+                      font-size: 14px;
+                      font-weight: 600;
+                      margin: 0px 0 0 0;
+                      padding: 0;
+                    }
+
+                    h5 {
+                      font-weight: 700;
+                      font-size: 13px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &.navigations {
+            .swiper-button-prev {
+              left: -10px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 5px;
+              }
+            }
+
+            .swiper-button-next {
+              right: 0px;
+              background: #fff;
+              box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+              filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .141));
+
+              &::after {
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                left: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .custom_council_slider {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .member_box {
+                .member_img {
+                  // width: 40px;
+                  // height: 40px;
+                  // margin: 5px;
+                }
+
+                .member_content {
+                  p {
+                    width: 60%;
+                    font-size: 16px;
+                    font-weight: 400;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-sec {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .banner_overlay {
+            // display: none;
+          }
+        }
+      }
+    }
+
+    .banner_container {
+      left: 10%;
+
+      .banner_full {
+        width: 100%;
+        height: auto;
+      }
+
+      .banner-content {
+        h1 {
+          font-size: 32px;
+          line-height: 24px;
+        }
+
+        P {
+          width: 75%;
+          margin: 0px 0 20px 0;
+        }
+      }
+    }
+
+    .banner-img {
+      min-height: 100%;
+      max-height: 100%;
+      width: 100%;
+
+      img {
+        object-fit: contain;
+      }
+
+      video {
+        width: 100%;
+        // min-height: 150px;
+        // max-height: 150px;
+      }
+    }
+
+    .swiper-button-next {
+      right: -15px;
+      background: #fff;
+
+      &::after {
+        left: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -15px;
+      background: #fff;
+
+      &::after {
+        right: -3px;
+        position: relative;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .council_members_sec {
+    .swiper-button-prev {
+      left: 10%;
+    }
+
+    .swiper-button-next {
+      right: 10%;
+    }
+  }
+
+  .no_events_box {
+    min-height: 50vh;
+  }
+
+  .our_testimonial_sec {
+    .our_testimonial_slider {
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {}
+        }
+      }
+    }
+  }
+
+  .latest_news_sec {
+    .latest_news_row {
+      .latest_news_leftcolumn {
+        .latest_news_content {
+          .title {
+            font-size: 20px;
+            width: 100%;
+            margin: 0 0 20px 0;
+          }
+        }
+
+        .news_listing {
+          li {
+            .news_content {
+              h4 {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_head {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .swiper_content {
+            p {
+              width: 100%;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about_us_sec {
+    .about_head {
+      min-height: max-content;
+
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            .swiper_content {
+              p {
+                width: 100%;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_aboutus_sec {
+    .about_us_sec {
+      .about_head {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .swiper_content {
+                p {
+                  width: 100%;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .about_stepper_row {
+        margin: 100px 0 0 0px !important;
+
+        .about_stepper_content {
+          p {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmember_sec {
+    .ourmember_sec {
+      .our_member_listing {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 45%;
+
+            .member_box {
+              .member_img {
+                .overlay {
+                  margin: 0 auto;
+                  background-position: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_form {
+        .custom_radio_btns {
+          .mat-radio-group {
+            justify-content: center;
+
+            .mat-radio-button {
+              margin: 0 20px 20px 0;
+            }
+          }
+        }
+      }
+
+      .membership_benefits_flex {
+        display: block !important;
+
+        .membership_benefits_leftcolumn {
+          max-width: 100% !important;
+        }
+
+        .membership_benefits_rightcolumn {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .master_ourgallery_sec {
+    .our_gallery_sec {
+      .gallery_row {
+        .gallery_column {
+          .our_gallery_box {
+            .gallery_content {
+              height: 40px;
+              line-height: 40px;
+
+              h4 {
+                font-size: 15px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .master_oursponsors_sec {
+    .our_sponsors_sec {
+      .our_sponsors_row {
+        .our_sponsors_listing {
+          ul {
+            li {
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .our_membership_column {
+    max-width: 90% !important;
+  }
+
+  .master_ourmembership_sec {
+    .our_membership_sec {
+      .membership_benefits_flex {
+        .membership_benefits_rightcolumn {
+          .benefits_img {
+            float: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+          }
+        }
+
+        .membership_benefits_leftcolumn {
+          .benefits_content_box {
+            p {
+              padding: 0 0px 0 0;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      .media_group_row {
+        p {
+          font-size: 15px;
+          padding: 0 0px 0 0;
+        }
+      }
+    }
+  }
+
+  .master_profile_sec {
+    .profile_row {
+      .profile_left {
+        .profile_listing {
+          padding: 10px 0;
+          min-height: 100%;
+        }
+      }
+
+      .profile_right {
+        .profile_router_outlet {
+          padding: 0px 25px 20px 25px;
+
+          .my_events_sec {
+            .my_events_row {
+              .my_event_box {
+                height: 100%;
+                padding: 10px 10px;
+                display: block;
+                position: relative;
+
+                .event_box_left {
+                  .media {
+                    padding: 0px 0 10px 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .my_notifications_sec {
+    .event_box_right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .upcoming_events_sec {
+    margin: 50px 0 0 0;
+  }
+
+  .master_eventgallery_sec {
+    .eventgallery_sec {
+      .upcoming_events_sec {
+        .upcoming_events_row {
+          margin: 0px 0;
+        }
+      }
+    }
+  }
+
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: auto;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            .custom_description_heading {
+              h4 {
+                width: 100%;
+              }
+
+              p {
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec {
+    .event_details_sec {
+      .event_description_row {
+        .event_description_leftcolumn {
+          .img_box {
+            height: auto;
+          }
+        }
+
+        .event_description_rightcolumn {
+          .description_content {
+            .custom_description_heading {
+              h4 {
+                width: 100%;
+              }
+
+              p {
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .master_eventdetails_sec{
+    .event_details_sec{
+      .event_details_row{
+        .event_details_rightcolumn{
+          .membership_form{
+            padding-left: 10px;
+          }
+        }
+      }
+      .event_description_row{
+        .event_description_rightcolumn{
+          .description_content{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// /* --------------------- EXTRA LARGE SCREENS ------------------- */
+@media #{$breakpoint-xl} {
+  .flag_cornor {
+    top: -48px !important;
+  }
+
+  .council_members_sec .council_members_slider .custom_council_slider .swiper-container .swiper-wrapper .swiper-slide .member_box .member_content p {
+    width: 50%;
+  }
+
+  .custom_heading p {
+    width: 100%;
+  }
+}
+
+@media #{$breakpoint-mac} {
+  .flag_cornor {
+    top: -18px !important;
+  }
+}
+
+/* ------------------------ 240-767--RESPONSIVE ----------------------- */
+@media screen and (max-width: 767px) {}
+
+// ABOVE-LAPTOP
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+  .wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  .council_members_sec {
+
+    // .map_center {
+    //   background-size: contain;
+    // }
+    .council_members_slider {
+      // margin-top: 50px;
+    }
+  }
+
+  .about_us_sec {
+    .flag-bg {
+      top: 10%;
+
+      img {
+        width: 750px;
+      }
+    }
+
+    .chakra_flag {
+      img {
+        // width: 600px;
+      }
+    }
+  }
+
+  .no_events_box {
+    min-height: 50vh;
+  }
+
+  .banner-sec {
+    .banner-img {
+      min-height: 100%;
+      max-height: 100%;
+
+      img {}
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 1920px) {
+  .council_members_sec {
+    .council_members_slider {
+      .map_center {
+        .council_member_list {
+          &.second {
+            left: 26%;
+          }
+        }
+      }
+    }
+  }
+}

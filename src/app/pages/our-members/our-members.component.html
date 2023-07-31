@@ -1,0 +1,194 @@
+  <!-- BANNER-SEC -->
+  <app-banner [banners]="banners"></app-banner>
+<section class="master_ourmember_sec">
+  <div class="flag_cornor"></div>
+  <!-- <ngx-spinner type="non">
+    <img height="150px" width="150px" src="../../../assets/images/Logo-Animation.gif" alt="img">
+  </ngx-spinner> -->
+  <ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+  </ngx-spinner>
+  <!-- our_member_sec -->
+  <section class="ourmember_sec sec_padding">
+    <div class="wrapper">
+      <!-- HEADING -->
+      <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+        fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="custom_heading">
+            <h2 class="title">
+              Our <span class="primary">Members</span>
+            </h2>
+            <p>WAIDA family is enriched with the plethora of experience from our fraternity members. We aim to keep adding dentists who are willing to do something more than their job role, who want to contribute to the dental world uniquely.</p>
+          </div>
+        </div>
+      </div>
+      <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+        fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="our_member_listing">
+            <ul>
+              <li *ngFor="let member of members">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img [src]="member?.image" alt="">
+                    <!-- <div class="overlay"></div> -->
+                  </div>
+
+                  <div class="member_content">
+                   <h4>Dr. {{member?.firstname}} {{member?.lastname}}</h4>
+                    <p>{{member?.role}}</p>
+                  </div>
+                </div>
+              </li>
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/5.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Linda Feldman</h4>
+                    <p>Root Canals Dentist</p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/2.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Jessica Tailor</h4>
+                    <p>Implant Surgeon </p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/3.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Nicholas Fleming</h4>
+                    <p>Cosmetic Dental Surgeon</p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/4.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Brian Adam</h4>
+                    <p>Restorative Dentist</p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/5.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Linda Feldman</h4>
+                    <p>Root Canals Dentist</p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/2.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Jessica Tailor</h4>
+                    <p>Implant Surgeon </p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/1.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Linda Feldman</h4>
+                    <p>Root Canals Dentist</p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/1.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Linda Feldman</h4>
+                    <p>Root Canals Dentist</p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/5.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Linda Feldman</h4>
+                    <p>Root Canals Dentist</p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/2.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Jessica Tailor</h4>
+                    <p>Implant Surgeon </p>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li (click)="memberDetails()">
+                <div class="member_box">
+                  <div class="member_img">
+                    <img src="../../../assets/images/members/3.jpg" alt="">
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="member_content">
+                    <h4>Dr. Nicholas Fleming</h4>
+                    <p>Cosmetic Dental Surgeon</p>
+                  </div>
+                </div>
+              </li> -->
+            </ul>
+            <!-- <div class="custom_paginator">
+              <button class="btn btn-sm paginator_btn prev_btn mat-button" mat-button>
+                <img src="../../../assets/images/icons/left-chevron.png" alt="">
+              </button>
+              <button class="btn btn-sm paginator_btn next_btn mat-button" mat-button>
+                <img src="../../../assets/images/icons/right-chevron.png" alt="">
+              </button>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<div class="chakra_center"></div>
+

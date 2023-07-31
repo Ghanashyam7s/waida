@@ -1,0 +1,127 @@
+<div class="master-modal sponsor_register_modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <!-- Modal-Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Sponsor Register</h4>
+        <div class="modal_close_btn">
+          <span (click)="dialogClose()" class="modal-close "><i class="material-icons">close</i></span>
+        </div>
+      </div>
+      <!-- Modal content-->
+      <div mat-dialog-content>
+        <!-- Modal-Body -->
+        <form [formGroup]="sponsorForm" class="form-section membership_form" #sponsor="ngForm">
+          <div class="modal-body">
+            <perfect-scrollbar class="modal-body-scrollbar">
+            <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+              fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+              <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50" fxFlex.xs="100"
+                fxFlexFill>
+                <!-- first-NAME -->
+                <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter First Name" formControlName="firstName">
+                      <mat-icon matSuffix>
+                        <img src="../../../assets/images/icons/form/full_name.svg" alt="">
+                      </mat-icon>
+                      <mat-error *ngIf="firstName.invalid && ( firstName.dirty || firstName.touched )">
+                        <span>Please provide a valid first name</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <!-- EMAIL -->
+                <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter Email" formControlName="email">
+                      <mat-icon matSuffix>
+                        <img src="../../../assets/images/icons/form/mail.svg" alt="">
+                      </mat-icon>
+                      <mat-error *ngIf="email.invalid && ( email.dirty || email.touched )">
+                        <span>Please provide a valid email</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <!--PASSWORD -->
+
+
+
+
+              </div>
+              <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50" fxFlex.xs="100"
+                fxFlexFill>
+                <!-- Last-NAME -->
+                <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter Last Name" formControlName="lastName">
+                      <mat-icon matSuffix>
+                        <img src="../../../assets/images/icons/form/last_name.svg" alt="">
+                      </mat-icon>
+                      <mat-error *ngIf="lastName.invalid && ( lastName.dirty || lastName.touched )">
+                        <span>Please provide a valid last name</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <!-- PHONE-NO -->
+                <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter Phone Number" formControlName="phone">
+                      <mat-icon matSuffix>
+                        <img src="../../../assets/images/icons/form/contact.svg" alt="">
+                      </mat-icon>
+                      <mat-error *ngIf="phone.invalid && ( phone.dirty || phone.touched )">
+                        <span>Please provide a valid phone number</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <!--CONFIRM PASSWORD -->
+
+                <!-- ADDRESS -->
+
+              </div>
+            </div>
+
+            <div class="custom-form-group">
+              <div class="custom-form-control">
+                <mat-form-field appearance="outline" class="message">
+                  <textarea rows="5" cols="5" matInput formControlName="message"
+                    placeholder="Enter Message"></textarea>
+                  <mat-icon matSuffix>
+                    <img src="../../../assets/images/icons/form/message.svg" alt="">
+                  </mat-icon>
+                  <mat-error *ngIf="message.invalid && ( message.dirty || message.touched )">
+                    <span>Please provide a valid message</span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="" fxLayout="column" fxLayoutAlign="end end">
+              <button class="btn btn-sm reg_btn global-btn" (click)="addSponsorship(sponsor)" mat-button>Register
+                Now</button>
+            </div>
+          </perfect-scrollbar>
+          </div>
+          <!-- Modal-Footer -->
+          <!-- <div class="modal-footer">
+            <button mat-button (click)="dialogClose()" class="cancel-btn">
+              <span>Cancel</span>
+            </button>
+            <button type="submit" mat-button class="global-btn primary-bg radius-25">
+              <span>Register</span>
+            </button>
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

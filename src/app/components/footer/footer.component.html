@@ -1,0 +1,188 @@
+  <section class="footer_sec sec-padding">
+    <div class="overlay"></div>
+    <div class="wrapper">
+      <div class="footer_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+        fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div class="footer_column" fxLayout="column" fxFlex.xl="40" fxFlex.lg="40" fxFlex.md="40" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="footer_logo">
+            <img src="../../../assets/images/logo.jpg" alt="footer logo of WAIDA">
+            <div class="office_address">
+              <!-- MEDIA -->
+              <div class="media">
+                <div class="media-left">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+                <div class="media-body">
+                  <p>PO BOX 2054, 8 ASHTON AVENUE,</p>
+                  <p>CLAREMONT, WA, 6010.</p>
+                </div>
+              </div>
+              <!-- MEDIA -->
+              <!-- <div class="media">
+                <div class="media-left">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="media-body">
+                  <p>Email: waidassociation@gmail.com</p>
+                </div>
+              </div> -->
+              <!-- <div class="media">
+                <div class="media-left">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="media-body">
+                  <p>Dr. Nishant Vaishnav : 0422665934</p>
+                </div>
+              </div> -->
+              <!-- <div class="media">
+                <div class="media-left">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="media-body">
+                  <p>Dr. Silas Prashant : 0430364997</p>
+                </div>
+              </div> -->
+              <!-- <div class="media">
+                <div class="media-left">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="media-body">
+                  <p>Dr. Rahul Pankhania : 0423947776</p>
+                </div>
+              </div> -->
+              <!-- <div class="media">
+                <div class="media-left">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="media-body">
+                  <p>Dr. Preshit Joshi : 0413995655</p>
+                </div>
+              </div> -->
+              <!-- MEDIA -->
+              <div class="media">
+                <div class="media-left">
+                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </div>
+                <div class="media-body">
+                  <p>Email: waida@waida.com.au</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- <div class="footer_column" fxLayout="column" fxFlex.xl="30" fxFlex.lg="30" fxFlex.md="30" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <h2 class="footer_heading">USEFUL LINKS</h2>
+          <div class="quick_links">
+            <ul>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>AMA</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>RACP</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>WA Health job
+              </li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>Contact us
+              </li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>Doctor Connect
+              </li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>Diabetes
+                Australia</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>HealthPathways
+                WA</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>Beyond Blue</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>NPS Medicinewise
+              </li>
+            </ul>
+          </div>
+        </div> -->
+        <div class="footer_column" fxLayout="column" fxFlex.xl="30" fxFlex.lg="30" fxFlex.md="30" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <h2 class="footer_heading">Quick Links</h2>
+          <div class="quick_links">
+            <ul>
+              <li routerLink='/'>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>Home</li>
+              <li routerLink='/our-gallery'><i class="fa fa-angle-right" aria-hidden="true"></i>Gallery</li>
+              <li routerLink='/our-membership'><i class="fa fa-angle-right" aria-hidden="true"></i>Membership
+              </li>
+              <!-- <li><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy
+              </li> -->
+              <li routerLink='/about-us'><i class="fa fa-angle-right" aria-hidden="true"></i>About Us
+              </li>
+              <li routerLink='/contact-us'><i class="fa fa-angle-right" aria-hidden="true"></i>Contact us
+              </li>
+              <li routerLink='/our-sponsors'><i class="fa fa-angle-right" aria-hidden="true"></i>Sponsors</li>
+              <li routerLink='/events-gallery'><i class="fa fa-angle-right" aria-hidden="true"></i>Events</li>
+              <!-- <li><i class="fa fa-angle-right" aria-hidden="true"></i>Terms &
+                Conditions</li> -->
+
+            </ul>
+          </div>
+        </div>
+        <div class="footer_column" fxLayout="column" fxFlex.xl="30" fxFlex.lg="30" fxFlex.md="30" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="news_letter">
+            <h2 class="footer_heading">Newsletter</h2>
+            <p>Subscribe now for
+              the latest updates </p>
+            <form class="footer-notify-input" [formGroup]="subcription">
+              <div class="custom-form-group">
+                <div class="custom-form-control footer-input">
+                  <mat-form-field appearance="outline">
+                    <input matInput placeholder="Enter your mail address" formControlName="email" type="search">
+                    <mat-error *ngIf="email.invalid && ( email.dirty || email.touched )">
+                      <span>Please provide a valid email</span>
+                    </mat-error>
+                    <!-- <mat-error *ngIf="email.invalid && ( email.dirty || email.touched )">
+                      <span>Please provide a valid email</span>
+                    </mat-error> -->
+                  </mat-form-field>
+                </div>
+                <button mat-button class="footer-btn icon-btn" aria-label="search" (click)="subcriptions()">
+                  <img src="../../../assets/images/icons/send.png" alt="latest updates of joondaloop">
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="social_links">
+            <ul>
+              <li>
+                <a [href]="settings?.social?.facebook" target="_blank">
+                  <img src="../../../assets/images/social/facebook.png" alt="facebook of WAIDA">
+                </a>
+              </li>
+              <li>
+                <a [href]="settings?.social?.instagram" target="_blank">
+                  <img src="../../../assets/images/social/insta.svg" alt="instagram  of WAIDA">
+                </a>
+              </li>
+              <!-- <li>
+                <a [href]="settings?.social?.youtube" target="_blank">
+                  <img src="../../../assets/images/social/youtube.svg" alt="youtube of WAIDA">
+                </a>
+              </li> -->
+              <li>
+                <a [href]="settings?.social?.youtube" target="_blank">
+                 <img src="../../../assets/images/social/linkedin-icon.svg" alt="LinkedIn of WAIDA">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bottom_footer_sec">
+    <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+      fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+      <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+        <div class="wrapper">
+          <div class="bottom_footer">
+            <p>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can
+              opt-out if you wish.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,133 @@
+  <!-- BANNER-SEC -->
+  <app-banner [banners]="banners"></app-banner>
+<section class="master_ourgallery_sec">
+  <div class="flag_cornor"></div>
+  <!-- <ngx-spinner type="non">
+    <img height="150px" width="150px" src="../../../assets/images/Logo-Animation.gif" alt="img">
+  </ngx-spinner> -->
+  <ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+  </ngx-spinner>
+  <!-- our_member_sec -->
+  <section class="our_gallery_sec sec_padding">
+    <div class="wrapper">
+      <!-- HEADING -->
+      <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+        fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="custom_heading">
+            <h2 class="title">
+              Our <span class="primary">Gallery</span>
+            </h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery_row row-wrap" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch">
+        <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill *ngFor="let galleryImages of gallery">
+          <div class="our_gallery_box"  (click)="galleryView(galleryImages)">
+            <div class="gallery_img">
+              <img [src]="galleryImages?.image?.signedUrl" alt="">
+            </div>
+            <!-- <div class="gallery_content">
+              <h4>{{galleryImages?.caption}} </h4>
+            </div> -->
+          </div>
+        </div>
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/2.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Fringilla vulputate mattis </h4>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/3.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Molestie quam magna</h4>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/4.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Dental Implants</h4>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/5.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Root Canal Dental Implants</h4>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/1.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Imperdiet imperdiet nulla </h4>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/2.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Fringilla vulputate mattis </h4>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/3.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Molestie quam magna</h4>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="gallery_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+          fxFlex.xs="100" fxFlexFill>
+          <div class="our_gallery_box"  (click)="galleryView()">
+            <div class="gallery_img">
+              <img src="../../../assets/images/gallery/4.jpg" alt="">
+            </div>
+            <div class="gallery_content">
+              <h4>Dental Implants</h4>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+</section>
+<div class="chakra_center"></div>
+

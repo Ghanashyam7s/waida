@@ -1,0 +1,44 @@
+<section class="master_profile_sec">
+  <div class="profile_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+    fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="0px">
+
+    <div class="profile_left" fxLayout="column" fxFlex.xl="25" fxFlex.lg="25" fxFlex.md="25" fxFlex.sm="35"
+      fxFlex.xs="100" fxFlexFill>
+      <div class="profile_listing">
+        <div class="profile_img">
+          <img *ngIf="user?.photoURL" [src]="user?.photoURL" alt="">
+          <img *ngIf="!user?.photoURL" src="https://img.icons8.com/clouds/100/000000/user.png" alt="">
+          <p>{{user?.displayName}}</p>
+        </div>
+        <ul class="listing">
+          <li [routerLink]="['/profile/details']" routerLinkActive="router-link-active">
+            <a>
+              <img src="../../../assets/images/profile/profile_user.svg" alt="">
+              Profile</a>
+          </li>
+          <li [routerLink]="['/profile/my-events']" routerLinkActive="router-link-active">
+            <a>
+              <img src="../../../assets/images/profile/event_box.svg" alt="">
+              My Events</a>
+          </li>
+          <li [routerLink]="['/profile/my-notifications']" routerLinkActive="router-link-active">
+            <a>
+              <img src="../../../assets/images/profile/notification.svg" alt="">
+              My Notifications</a>
+          </li>
+          <li [routerLink]="['/profile/my-subscriptions']" routerLinkActive="router-link-active">
+            <a>
+              <img src="../../../assets/images/profile/coupon.svg" alt="">
+              My Subscriptions</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile_right" fxLayout="column" fxFlex.xl="75" fxFlex.lg="75" fxFlex.md="75" fxFlex.sm="65"
+      fxFlex.xs="100" fxFlexFill>
+      <div class="profile_router_outlet">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>

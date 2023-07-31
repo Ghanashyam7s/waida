@@ -1,0 +1,15 @@
+{
+  "targets": {
+    "waida-45fae": {
+      "hosting": {
+        "waida": [
+          "waida-45fae"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "staging": "waida-45fae",
+    "default": "waida-45fae"
+  }
+}

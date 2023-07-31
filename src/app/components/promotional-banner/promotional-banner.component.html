@@ -1,0 +1,49 @@
+<!-- ADD-MODAL-STRUCTURE -->
+<div class="master-modal promotional_banner_modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <!-- Modal-Header -->
+      <div class="modal_close_btn">
+        <span (click)="dialogClose()" class="modal-close"><i class="material-icons">close</i></span>
+      </div>
+      <!-- Modal content-->
+      <div mat-dialog-content>
+        <!-- Modal-Body -->
+        <div class="modal-body">
+          <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+            fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="0px">
+            <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+              fxFlexFill>
+              <div class="swiper-container" [swiper]="promotionalConfig">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="../../../assets/images/Value digi logo.png" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../../../assets/images/promotional Banner.png" alt="">
+                  </div>
+                  <!-- <div class="swiper-slide">
+                    <img src="../../../assets/images/promotional Banner.png" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../../../assets/images/promotional Banner.png" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../../../assets/images/promotional Banner.png" alt="">
+                  </div> -->
+                </div>
+                <div class="navigations">
+                  <div class="swiper-button-prev web-button-prev">
+                  </div>
+                  <div class="swiper-button-next web-button-next">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,548 @@
+<!-- BANNER-SEC -->
+<app-banner [banners]="banners"></app-banner>
+<section class="master_ourmembership_sec">
+  <div class="flag_cornor"></div>
+  <!-- <ngx-spinner type="non">
+    <img height="150px" width="150px" src="../../../assets/images/Logo-Animation.gif" alt="img">
+  </ngx-spinner> -->
+  <ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+  </ngx-spinner>
+  <!-- our_member_sec -->
+  <section class="our_membership_sec sec_padding">
+    <div class="wrapper">
+      <!-- HEADING -->
+      <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+        fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="custom_heading">
+            <h2 class="title">
+              Our <span class="primary">Membership</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- MEMBERSHIP-FORM -->
+      <div fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column"
+        fxLayoutAlign="center stretch" fxLayoutGap="0px">
+        <div class="our_membership_column" fxLayout="column" fxFlex.xl="75" fxFlex.lg="75" fxFlex.md="75" fxFlex.sm="75"
+          fxFlex.xs="100" fxFlexFill fxLayoutAlign="center center">
+          <form [formGroup]="memberShipForm" class="form-section membership_form" #bookMembership="ngForm">
+            <div class="custom_radio_btns">
+              <mat-radio-group formControlName="membershipType" (change)="setCustomValidity($event)">
+                <mat-radio-button value="fullMember" (click)="fullMembership()">WAIDA Membership </mat-radio-button>
+                <!-- <mat-radio-button value="couple member">Couple Member</mat-radio-button> -->
+                <mat-radio-button value="studentMember" (click)="studentMembership()">WAIDA Student Membership
+                </mat-radio-button>
+                <mat-error *ngIf="membershipType.invalid && ( membershipType.dirty || membershipType.touched )">
+                  <span>Please provide a valid membership type</span>
+                </mat-error>
+              </mat-radio-group>
+            </div>
+            <div class="membership_form">
+              <ul>
+                <li>
+                  <!-- First-NAME -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter first Name" formControlName="firstName">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/full_name.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="firstName.invalid && ( firstName.dirty || firstName.touched )">
+                          <span>Please provide a valid first name</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- Last-NAME -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter last Name" formControlName="lastName">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/last_name.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="lastName.invalid && ( lastName.dirty || lastName.touched )">
+                          <span>Please provide a valid last name</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- Email -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter email" formControlName="email">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/mail.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="email.invalid && ( email.dirty || email.touched )">
+                          <span>Please provide a valid email</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- membershipPlan -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <mat-select placeholder="Choose Membership plan" formControlName="membershipPlan">
+                          <mat-option disabled=""> Choose Membership Plan </mat-option>
+                          <mat-option [value]="'365'">membership 2022</mat-option>
+                          <!-- <mat-option [value]="'EMAIL'">Email</mat-option>
+              <mat-option [value]="'PHONE'">Phone</mat-option> -->
+                        </mat-select>
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/select.svg" alt="" class="arrow_icon">
+                        </mat-icon>
+                        <mat-error *ngIf="membershipPlan.invalid && ( membershipPlan.dirty || membershipPlan.touched )">
+                          <span>Please select membership plan</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- PHONE-NO -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter phone number" formControlName="phone">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/contact.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="phone.invalid && ( phone.dirty || phone.touched )">
+                          <span>Please provide a valid phone number</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- profile Image -->
+                  <div class="custom-form-group upload_group">
+                    <div class="custom-form-control">
+                      <button type="button" class="upload_btn">
+                        Please Upload Your Image
+                        <img src="../../../assets/images/icons/upload.svg" alt="" class="upload_icon" />
+                        <input type="file" placeholder="Please Upload Your Image" class="input-upload"
+                          (change)="uploadFile(fileInput.files)" #fileInput formControlName="profileUrl">
+                        <img [src]="profileUrl?.value" *ngIf="profileUrl.value" class="img_preview">
+                      </button>
+                      <small class="custom_error"
+                        *ngIf="profileUrl.invalid && ( profileUrl.dirty || profileUrl.touched )">Please provide a valid
+                        profile Image</small>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!--PASSWORD -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput [type]="hide2 ? 'password' : 'text'" placeholder="Enter password"
+                          formControlName="password">
+                        <mat-icon matSuffix>
+                          <img (click)="hide2 = !hide2" style="cursor: pointer;"
+                            src="../../../assets/images/icons/form/eye.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="password.invalid && ( password.dirty || password.touched )">
+                          <span *ngIf="password.hasError('required')">Please provide a valid password</span>
+                          <span *ngIf="password.hasError('minlength')">Password must be at least 6 digits long</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- confPassword -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter confirm password"
+                          formControlName="confPassword">
+                        <mat-icon matSuffix>
+                          <img (click)="hide = !hide" style="cursor: pointer;"
+                            src="../../../assets/images/icons/form/eye.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="confPassword.invalid && ( confPassword.dirty || confPassword.touched )">
+                          <!-- <span>Please provide a valid confirm password</span> -->
+                          <span *ngIf="confPassword.hasError('required')">Please provide a valid confirm password</span>
+                          <span *ngIf="confPassword.hasError('minlength')"> Password must be at least 6 digits
+                            long</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- addressLineOne -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter address line 1" formControlName="addressLineOne">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/addresss.svg" class="address_icon" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="addressLineOne.invalid && ( addressLineOne.dirty || addressLineOne.touched )">
+                          <span>Please provide a valid address line 1</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!--addressLineTwo -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter address line 2" formControlName="addressLineTwo">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/addresss.svg" class="address_icon" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="addressLineTwo.invalid && ( addressLineTwo.dirty || addressLineTwo.touched )">
+                          <span>Please provide a valid address line 2</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- city -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter city" formControlName="city">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/addresss.svg" class="address_icon" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="city.invalid && ( city.dirty || city.touched )">
+                          <span>Please provide a valid city</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- state -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter state" formControlName="state">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/addresss.svg" class="address_icon" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="state.invalid && ( state.dirty || state.touched )">
+                          <span>Please provide a valid state</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- postalCode -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter postal code" formControlName="postalCode">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/addresss.svg" class="address_icon" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="postalCode.invalid && ( postalCode.dirty || postalCode.touched )">
+                          <span>Please provide a valid postal code</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- speciality -->
+                  <div class="custom-form-group">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter speciality" formControlName="speciality">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/form/specility.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="speciality.invalid && ( speciality.dirty || speciality.touched )">
+                          <span>Please provide a valid speciality</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!-- studentDetails -->
+                  <div class="custom-form-group" *ngIf="!hideChoose">
+                    <div class="custom-form-control">
+                      <mat-form-field appearance="outline">
+                        <input matInput placeholder="Institution Details" formControlName="studentDetails">
+                        <mat-icon matSuffix>
+                          <img src="../../../assets/images/icons/Building.svg" alt="">
+                        </mat-icon>
+                        <mat-error *ngIf="studentDetails.invalid && ( studentDetails.dirty || studentDetails.touched )">
+                          <span>Please provide a valid Institution Details</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- ADDRESS -->
+            <!-- <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+              fxLayout.xs="column" fxLayoutAlign="center stretch">
+              <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+                fxFlexFill>
+                <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline" class="message">
+                      <textarea rows="5" cols="5" matInput formControlName="address"
+                        placeholder="Enter address"></textarea>
+                      <mat-icon matSuffix>
+                        <img src="../../../assets/images/icons/form/addresss.svg" class="address_icon" alt="">
+                      </mat-icon>
+                      <mat-error *ngIf="address.invalid && ( address.dirty || address.touched )">
+                        <span>Please provide a valid address</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="" fxLayout="column" fxLayoutAlign="center center">
+              <button class="btn btn-sm reg_btn global-btn" mat-button (click)="checkValidity()"
+                [ngClass]="{'show': !showPaypal , 'hide': showPaypal}"> {{membershipPrice| currency}} Register Now
+              </button>
+              <div [ngClass]="{'show': showPaypal , 'hide': !showPaypal}">
+                <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Membership Benefits -->
+      <div class="membership_benefits_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="custom_heading">
+            <h2 class="title">
+              Membership <span class="primary">Benefits</span>
+            </h2>
+            <div class="benefits_slider">
+              <div class="custom_slider_container navigations">
+                <div class="swiper-button-prev benefits-button-prev">
+                </div>
+                <div class="swiper-container" [swiper]="benefitsConfig">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <li>
+                        <img src="../../../assets/images/benfits_waida/charitable_activities.jpg" alt="">
+                        <div class="benefits_content">
+                          <div class="w-100"></div>
+                          <h4>charitable activities</h4>
+                        </div>
+                        <div class="overlay"></div>
+                      </li>
+                    </div>
+                    <div class="swiper-slide">
+                      <li>
+                        <img src="../../../assets/images/benfits_waida/educational_meets.jpg" alt="">
+                        <div class="benefits_content">
+                          <div class="w-100"></div>
+                          <h4>educational meets</h4>
+                        </div>
+                        <div class="overlay"></div>
+                      </li>
+                    </div>
+                    <div class="swiper-slide">
+                      <li>
+                        <img src="../../../assets/images/benfits_waida/event.jpg" alt="">
+                        <div class="benefits_content">
+                          <div class="w-100"></div>
+                          <h4>event discounts</h4>
+                        </div>
+                        <div class="overlay"></div>
+                      </li>
+                    </div>
+                    <div class="swiper-slide">
+                      <li>
+                        <img src="../../../assets/images/benfits_waida/product_discount.jpg" alt="">
+                        <div class="benefits_content">
+                          <div class="w-100"></div>
+                          <h4>product discounts</h4>
+                        </div>
+                        <div class="overlay"></div>
+                      </li>
+                    </div>
+                    <div class="swiper-slide">
+                      <li>
+                        <img src="../../../assets/images/benfits_waida/scientific_activities.jpg" alt="">
+                        <div class="benefits_content">
+                          <div class="w-100"></div>
+                          <h4>scientific activities</h4>
+                        </div>
+                        <div class="overlay"></div>
+                      </li>
+                    </div>
+                    <div class="swiper-slide">
+                      <li>
+                        <img src="../../../assets/images/benfits_waida/social_activities.jpg" alt="">
+                        <div class="benefits_content">
+                          <div class="w-100"></div>
+                          <h4>social activities</h4>
+                        </div>
+                        <div class="overlay"></div>
+                      </li>
+                    </div>
+                    <div class="swiper-slide">
+                      <li>
+                        <img src="../../../assets/images/benfits_waida/social_and_proffesional_networking.jpg" alt="">
+                        <div class="benefits_content">
+                          <div class="w-100"></div>
+                          <h4>social and professional networking</h4>
+                        </div>
+                        <div class="overlay"></div>
+                      </li>
+                    </div>
+                  </div>
+                  <!-- <div class="swiper-pagination swiper-pagination-banner"></div> -->
+                </div>
+                <div class="swiper-button-next benefits-button-next">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sponsors -->
+      <!-- <div class="membership_benefits_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="custom_heading">
+            <h2 class="title">
+              <span class="primary">Sponsors</span>
+            </h2>
+            <p>Duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna. Duis rutrum non risus
+              in imperdiet. Proin molestie accumsan nulla sit amet mattis. Ut vel tristique neque. Praesent purus eros,
+              aliquet sit amet venenatis in, sodales in odio. Curabitur ac ligula et purus cursus vulputate accumsan sit
+              amet erat.</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="member_sponsors_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div class="member_sponsors_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="member_sponsors_box">
+            <img src="../../../assets/images/member_sponsors/2.png" alt="">
+            <div class="label_custom" *ngIf="user">
+              <label for="">Contact us:</label>
+              <span>email@gmail.com</span>
+            </div>
+            <div class="label_custom" *ngIf="user">
+              <label for="">Phone No:</label>
+              <span>+61 7 7010 1111</span>
+            </div>
+          </div>
+        </div>
+        <div class="member_sponsors_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="member_sponsors_box">
+            <img src="../../../assets/images/member_sponsors/3.png" alt="">
+            <div class="label_custom" *ngIf="user">
+              <label for="">Contact us:</label>
+              <span>email@gmail.com</span>
+            </div>
+            <div class="label_custom" *ngIf="user">
+              <label for="">Phone No:</label>
+              <span>+61 7 7010 1111</span>
+            </div>
+          </div>
+        </div>
+        <div class="member_sponsors_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="member_sponsors_box">
+            <img src="../../../assets/images/member_sponsors/2.png" alt="">
+            <div class="label_custom" *ngIf="user">
+              <label for="">Contact us:</label>
+              <span>email@gmail.com</span>
+            </div>
+            <div class="label_custom" *ngIf="user">
+              <label for="">Phone No:</label>
+              <span>+61 7 7010 1111</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="membership_benefits_flex" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div class="membership_benefits_leftcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="benefits_content_box">
+            <h4>The Busy Annual Calendar Of Waida
+              Is Inter Spread With A Good Mix</h4>
+            <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue.
+              Cras ut interdum elit. Ut malesuada a urna sit amet blandit. Nullam nunc lorem, aliquam at eros laoreet,
+              feugiat bibendum ligula. Aenean congue, massa id aliquet semper, ligula ante tristique nulla, quis posuere
+              dui purus vel urna. Nullam varius, magna nec egestas convallis, orci ex tempus quam, id finibus arcu ipsum
+              fringilla purus. Aenean dapibus suscipit eleifend. Aliquam vel ipsum eu lorem hendrerit iaculis vitae ut
+              lorem. Suspendisse ullamcorper dolor faucibus sem auctor consequat.</p>
+          </div>
+        </div>
+        <div class="membership_benefits_rightcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="benefits_img">
+            <img src="../../../assets/images/membership_benefits_1.svg" alt="">
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="membership_benefits_flex" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div class="membership_benefits_rightcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="benefits_img">
+            <img src="../../../assets/images/membership benefits_2.png" alt="">
+          </div>
+        </div>
+        <div class="membership_benefits_leftcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="benefits_content_box">
+            <h4>Annual Sports Events
+              Tournament Midyear</h4>
+            <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue.
+              Cras ut interdum elit. Ut malesuada a urna sit amet blandit. Nullam nunc lorem, aliquam at eros laoreet,
+              feugiat bibendum ligula. Aenean congue, massa id aliquet semper, ligula ante tristique nulla, quis posuere
+              dui purus vel urna. Nullam varius, magna nec egestas convallis, orci ex tempus quam, id finibus arcu ipsum
+              fringilla purus. Aenean dapibus suscipit eleifend. Aliquam vel ipsum eu lorem hendrerit iaculis vitae ut
+              lorem. Suspendisse ullamcorper dolor faucibus sem auctor consequat.</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="media_group_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <h4>Exclusive Social Media Group</h4>
+          <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue.
+            Cras ut interdum elit. Ut malesuada a urna sit amet blandit. Nullam nunc lorem, aliquam at eros laoreet,
+            feugiat bibendum ligula. Aenean congue, massa id aliquet semper, ligula ante tristique nulla, quis posuere
+            dui purus vel urna. Nullam varius, magna nec egestas convallis, orci ex tempus quam, id finibus arcu ipsum
+            fringilla purus. Aenean dapibus suscipit eleifend. Aliquam vel ipsum eu lorem hendrerit iaculis vitae ut
+            lorem. Suspendisse ullamcorper dolor faucibus sem auctor consequat.</p>
+        </div>
+      </div> -->
+    </div>
+  </section>
+</section>
+<div class="chakra_center"></div>

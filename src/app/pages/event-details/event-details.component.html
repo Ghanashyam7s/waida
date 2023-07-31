@@ -1,0 +1,415 @@
+<!-- BANNER-SEC -->
+<app-banner [banners]="banners"></app-banner>
+<section class="master_eventdetails_sec">
+  <div class="flag_cornor"></div>
+  <!-- <ngx-spinner type="non">
+    <img height="150px" width="150px" src="../../../assets/images/Logo-Animation.gif" alt="img">
+  </ngx-spinner> -->
+  <!-- <ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+    </ngx-spinner> -->
+  <!-- our_member_sec -->
+  <section class="event_details_sec sec_padding">
+    <div class="wrapper">
+      <!-- HEADING -->
+      <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+        fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="custom_heading">
+            <h2 class="title">
+              Event<span class="primary"> Details</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- EVENT-DETAILS-SEC -->
+      <div class="event_details_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="25px">
+        <div class="event_details_leftcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="event_address">
+            <h4> {{eventDetails?.title }}</h4>
+            <div class="custom_group">
+              <label>
+                <img src="../../../assets/images/icons/calender.png"> Event Date :
+              </label>
+              <span>{{eventDetails?.startDate.toDate() | date}} <span *ngIf="hideDate">-
+                  {{eventDetails?.endDate.toDate() | date}}</span> , {{eventDetails?.time}} to
+                {{eventDetails?.endTime}}</span>
+            </div>
+            <div class="custom_group">
+              <label>
+                <img src="../../../assets/images/icons/price.png">Adult Price :
+              </label>
+              <span *ngIf="pValue"> {{unitPrice | currency}}</span>
+              <span *ngIf="!pValue"> free</span>
+            </div>
+            <div class="custom_group">
+              <label>
+                <img src="../../../assets/images/icons/price.png">Child Price :
+              </label>
+              <span *ngIf="cValue"> {{eventDetails?.pricePerChild | currency}} (Between 12 - 18 age group. Free for below 12.)</span>
+            </div>
+            <div class="custom_group">
+              <label>
+                <img src="../../../assets/images/icons/form/addresss.svg"> Location :
+              </label>
+              <span>{{eventDetails?.location}}</span>
+            </div>
+            <div class="custom_map">
+              <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
+              <!-- <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61005138.69413274!2d95.28072260974845!3d-21.054355218495093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralia!5e0!3m2!1sen!2sin!4v1610165810955!5m2!1sen!2sin"
+                  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+            </div>
+          </div>
+        </div>
+        <div *ngIf="eventDetails?.status == 'INACTIVE'" class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row"
+          fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+            fxFlexFill>
+            <div class="custom_heading">
+              <h2 class="title">
+                Event<span class="primary"> Closed</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+
+
+  
+        <div *ngIf="eventDetails?.status != 'INACTIVE'" class="event_details_rightcolumn" fxLayout="column"
+          fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="enroll_form" *ngIf="!pastEvents">
+            <form [formGroup]="enrollForm" class="form-section membership_form">
+              <h4>Enroll Now</h4>
+
+
+              <!-- FIRST-NAME -->
+              <!-- <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter First Name" formControlName="firstName">
+                      <mat-error *ngIf="firstName.invalid && ( firstName.dirty || firstName.touched )">
+                        <span>Please provide a valid first name</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div> -->
+
+              <!-- <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter Last Name" formControlName="lastName">
+                      <mat-error *ngIf="lastName.invalid && ( lastName.dirty || lastName.touched )">
+                        <span>Please provide a valid last name</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div> -->
+              <!-- PHONE-NO -->
+              <!-- <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter phone number" formControlName="phone">
+                      <mat-error *ngIf="phone.invalid && ( phone.dirty || phone.touched )">
+                        <span>Please provide a valid phone number</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div> -->
+              <!-- EMAIL -->
+              <!-- <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Enter Email" formControlName="email">
+                      <mat-error *ngIf="email.invalid && ( email.dirty || email.touched )">
+                        <span>Please provide a valid email</span>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div> -->
+              <!-- Service -->
+              <div class="custom-form-group">
+                <div class="custom-form-control">
+                  <mat-form-field appearance="outline">
+                    <mat-select placeholder="Number Of Persons" formControlName="persons"
+                      (selectionChange)="someMethod($event.value)">
+                      <mat-option disabled=""> Number of persons </mat-option>
+                      <mat-option [value]="'1'">1</mat-option>
+                      <mat-option [value]="'2'">2</mat-option>
+                      <mat-option [value]="'3'">3</mat-option>
+                      <mat-option [value]="'4'">4</mat-option>
+                      <mat-option [value]="'5'">5</mat-option>
+                      <mat-option [value]="'6'">6</mat-option>
+                      <mat-option [value]="'7'">7</mat-option>
+                      <mat-option [value]="'8'">8</mat-option>
+                      <mat-option [value]="'9'">9</mat-option>
+                      <mat-option [value]="'10'">10</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="persons.invalid && ( persons.dirty || persons.touched )">
+                      <span>Please select persons</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- Child Persons -->
+              <div class="custom-form-group">
+                <div class="custom-form-control">
+                  <mat-form-field appearance="outline">
+                    <mat-select placeholder="Number Of Child" formControlName="childPersons"
+                      (selectionChange)="someChildMethod($event.value)">
+                      <mat-option disabled=""> Number of Child </mat-option>
+                      <mat-option [value]="'0'">0</mat-option>
+                      <mat-option [value]="'1'">1</mat-option>
+                      <mat-option [value]="'2'">2</mat-option>
+                      <mat-option [value]="'3'">3</mat-option>
+                      <mat-option [value]="'4'">4</mat-option>
+                      <mat-option [value]="'5'">5</mat-option>
+                      <mat-option [value]="'6'">6</mat-option>
+                      <mat-option [value]="'7'">7</mat-option>
+                      <mat-option [value]="'8'">8</mat-option>
+                      <mat-option [value]="'9'">9</mat-option>
+                      <mat-option [value]="'10'">10</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="childPersons.invalid && ( childPersons.dirty || childPersons.touched )">
+                      <span>Please select no of child</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <!-- Adult Details -->
+
+              <div class="custom-form-group">
+                <div class="custom-form-control">
+
+                  <ng-container formArrayName="adultPerson" >
+                    <ng-container *ngFor="let adultForm of adultPerson()?.controls; let adultIdx = index">
+                      <!-- <ng-container *ngFor="let adultForm of enrollForm.controls.adultPerson?.value; let i = index"> -->
+                      <div [formGroupName]="adultIdx">
+                        <h3>Adult {{ adultIdx + 1 }}</h3>
+                        <div>
+                          <mat-form-field appearance="outline">
+                            <input matInput placeholder="Enter Name" formControlName="name">
+                            <mat-error *ngIf="adultPerson()?.controls[adultIdx].get('name').invalid &&
+                           ( adultPerson()?.controls[adultIdx].get('name').dirty ||
+                            adultPerson()?.controls[adultIdx].get('name').touched )">
+                              <span>Please provide a valid name</span>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <input matInput placeholder="Enter Email Id" formControlName="email">
+                            <mat-error *ngIf="adultPerson()?.controls[adultIdx].get('email').invalid &&
+                           ( adultPerson()?.controls[adultIdx].get('email').dirty ||
+                            adultPerson()?.controls[adultIdx].get('email').touched )">
+                              <span>Please provide a valid email</span>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <input matInput placeholder="Enter Phone Number" formControlName="phone">
+                            <mat-error *ngIf="adultPerson()?.controls[adultIdx].get('phone').invalid &&
+                           ( adultPerson()?.controls[adultIdx].get('phone').dirty ||
+                            adultPerson()?.controls[adultIdx].get('phone').touched )">
+                              <span>Please provide a valid phone number</span>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <input matInput placeholder="Enter age" formControlName="age"> 
+                            <mat-error *ngIf="adultPerson()?.controls[adultIdx].get('age').invalid && 
+                          ( adultPerson()?.controls[adultIdx].get('age').dirty || adultPerson()?.controls[adultIdx].get('age').touched )">
+                              <span>Please provide a valid age</span>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <input matInput placeholder="Enter any food alergy" formControlName="foodAlergy">
+                            <mat-error
+                              *ngIf="adultPerson()?.controls[adultIdx].get('foodAlergy').invalid && 
+                          ( adultPerson()?.controls[adultIdx].get('foodAlergy').dirty || adultPerson()?.controls[adultIdx].get('foodAlergy').touched )">
+                              <span>Please provide a valid foodAlergy</span>
+                            </mat-error>
+                          </mat-form-field>
+
+                        </div>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </div>
+              </div>
+
+
+              <!-- Child Details -->
+
+               <div class="custom-form-group">
+                <div class="custom-form-control">
+
+                  <ng-container formArrayName="childPerson">
+                    <ng-container *ngFor="let childForm of childPerson()?.controls; let childIdx = index">
+                      <h3>Child {{ childIdx + 1 }}</h3>
+                      <div [formGroupName]="childIdx">
+                        <mat-form-field appearance="outline">
+                          <input matInput placeholder="Enter Name" formControlName="name">
+                          <mat-error *ngIf="childPerson()?.controls[childIdx].get('name').invalid &&
+                           ( childPerson()?.controls[childIdx].get('name').dirty ||
+                            childPerson()?.controls[childIdx].get('name').touched )">
+                            <span>Please provide a valid name</span>
+                          </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                          <input matInput placeholder="Enter age" formControlName="age" (blur)="childAgeChange()">
+                          <mat-error *ngIf="childPerson()?.controls[childIdx].get('age').invalid && 
+                          ( childPerson()?.controls[childIdx].get('age').dirty || childPerson()?.controls[childIdx].get('age').touched )">
+                            <span>Please provide a valid age</span>
+                          </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                          <input matInput placeholder="Enter any food alergy" formControlName="foodAlergy">
+                          <mat-error
+                            *ngIf="childPerson()?.controls[childIdx].get('foodAlergy').invalid && 
+                          ( childPerson()?.controls[childIdx].get('foodAlergy').dirty || childPerson()?.controls[childIdx].get('foodAlergy').touched )">
+                            <span>Please provide a valid foodAlergy</span>
+                          </mat-error>
+                        </mat-form-field>
+
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </div>
+              </div> 
+
+              <div class="custom-form-group" *ngIf="pValue">
+                <!-- <label class="custom-label" for=""> Popular Blog <span class="star">*</span></label> -->
+                <div class="custom-form-control">
+                  <mat-checkbox class="example-margin" formControlName="disclaimer">{{disclaimerData}}</mat-checkbox>
+                  <mat-error *ngIf="!enrollForm.value.disclaimer && showErr">
+                    <span>Please agree above condition</span>
+                  </mat-error>
+                </div>
+              </div>
+
+
+              <div>
+                <h3> Total To Pay</h3>
+              </div>
+
+              <div>
+                <span>Adult Qty {{ getAdultsLength() }}</span>
+                <span>Fee {{ evPrice }}</span>
+              </div>
+
+              <div>
+                <span>Child Qty {{ getChildLength() }}</span>
+                <span>Fee {{ childEvPrice }}</span>
+              </div>
+              <div>
+                Total Fees {{getTotalPrice() | currency}}
+              </div>
+
+
+              <div class="" fxLayout="column" fxLayoutAlign="start start">
+                <button class="btn btn-sm reg_btn global-btn" *ngIf="pValue"
+                  [ngClass]="{'show': !showPaypal , 'hide': showPaypal}" (click)="enrollment()"
+                  mat-button>({{getTotalPrice() | currency}}) Book Now</button>
+                <button class="btn btn-sm reg_btn global-btn" *ngIf="!pValue"
+                  [ngClass]="{'show': !showPaypal , 'hide': showPaypal}" (click)="freeEnrollment()" mat-button>Book
+                  Now(free)</button>
+                <div class="paypal_paymnet_box" [ngClass]="{'show': showPaypal , 'hide': !showPaypal}">
+                  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+                </div>
+
+
+                <!-- <div class="" fxLayout="column" fxLayoutAlign="center center">
+                      <button class="btn btn-sm reg_btn global-btn" mat-button (click)="checkValidity()"
+                        [ngClass]="{'show': !showPaypal , 'hide': showPaypal}"> {{membershipPrice| currency}} Register Now
+                      </button>
+                      <div [ngClass]="{'show': showPaypal , 'hide': !showPaypal}">
+                        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+                      </div>
+                    </div> -->
+
+                <!-- <button class="btn btn-sm reg_btn global-btn" mat-button (click)="checkValidity()"
+                    [ngClass]="{'show': !showPaypal , 'hide': showPaypal}"> {{membershipPrice| currency}} Register Now
+                  </button> -->
+
+
+              </div>
+            </form>
+          </div>
+          <div *ngIf="pastEvents">
+            <div class="w_100">
+              <img src="../../../assets/images/no_events.png" alt="">
+            </div>
+          </div>
+          <!-- <div *ngIf="pastEvents">
+            ggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+          </div> -->
+        </div>
+      </div>
+      <!-- EVENT-DESCRIPTION-SEC -->
+      <div class="event_description_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="center stretch" fxLayoutGap="25px">
+        <div class="event_description_leftcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <!-- <div class="img_box">
+              <img [src]="eventDetails?.image?.signedUrl" alt="">
+            </div> -->
+          <div class="swiper-container" [swiper]="eventdetailsConfig">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" *ngFor="let imgData of eventDetails?.image;let i = index">
+                <img [src]="imgData?.signedUrl" alt="img" />
+              </div>
+              <!-- <div class="swiper-slide">
+                  <img src="../../../assets/images/benfits_waida/educational_meets.jpg" alt="img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="../../../assets/images/benfits_waida/product_discount.jpg" alt="img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="../../../assets/images/benfits_waida/scientific_activities.jpg" alt="img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="../../../assets/images/benfits_waida/social_activities.jpg" alt="img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="../../../assets/images/benfits_waida/social_and_proffesional_networking.jpg" alt="img" />
+                </div> -->
+            </div>
+            <div class="navigations">
+              <div class="swiper-button-prev event-details-button-prev">
+              </div>
+              <div class="swiper-button-next event-details-button-next">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event_description_rightcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50"
+          fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+          <div class="description_content">
+            <div class="custom_description_heading">
+              <h4 class="title">
+                {{eventDetails?.title | titlecase}}
+              </h4>
+              <p [innerHtml]="eventDetails?.infoSection"></p>
+            </div>
+            <!-- <div *ngIf="pastEvents">
+            ggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- EVENT-DESCRIPTION-SEC -->
+
+    </div>
+  </section>
+</section>
+<div class="chakra_center"></div>

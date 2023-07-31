@@ -1,0 +1,266 @@
+<ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+</ngx-spinner>
+<section class="my_events_sec">
+  <div class="custom_tabs">
+    <mat-tab-group [disableRipple]="true" animationDuration="0ms">
+      <mat-tab>
+        <ng-template mat-tab-label>Active Events
+        </ng-template>
+        <div class="my_events_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+          fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div class="my_events_column" fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100"
+            fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+            <div class="my_event_box" *ngFor="let activeEvent of activeEvents">
+              <div class="event_box_left">
+                <div class="media">
+                  <div class="media-left">
+                    <img [src]="activeEvent?.eventImage?.signedUrl" class="media-object">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">{{activeEvent?.eventName}}</h4>
+                    <p class="loaction">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i> {{activeEvent?.eventLocation}}
+                    </p>
+                    <p class="price">
+                      <!-- $ 300.00 -->
+                      {{activeEvent?.eventPrice | currency}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="event_box_right">
+                <p class="booking_date">Booking Date : {{activeEvent?.createdAt}}</p>
+                <p class="event_date">Event Date : {{activeEvent?.eventDate.toDate() | date}} <span *ngIf="!activeEvent.hide">- {{activeEvent?.eventEndDate.toDate() | date}}</span>, {{activeEvent?.eventTime}}</p>
+              </div>
+            </div>
+
+
+            <div class="no_events_box" *ngIf="show">
+              <div class="w_100">
+                <h4>there is no active events here</h4>
+                <!-- <img src="../../../assets/images/no_events.png" alt=""> -->
+              </div>
+            </div>
+
+            <!-- <div class="my_event_box">
+              <div class="event_box_left">
+                <div class="media">
+                  <div class="media-left">
+                    <img src="../../../assets/images/event_img.png" class="media-object">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Event name</h4>
+                    <p class="loaction">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                    </p>
+                    <p class="price">
+                      $ 300.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="event_box_right">
+                <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+                <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+              </div>
+            </div> -->
+            <!-- <div class="my_event_box">
+              <div class="event_box_left">
+                <div class="media">
+                  <div class="media-left">
+                    <img src="../../../assets/images/event_img.png" class="media-object">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Event name</h4>
+                    <p class="loaction">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                    </p>
+                    <p class="price">
+                      $ 300.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="event_box_right">
+                <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+                <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+              </div>
+            </div> -->
+             <!-- <div class="my_event_box">
+              <div class="event_box_left">
+                <div class="media">
+                  <div class="media-left">
+                    <img src="../../../assets/images/event_img.png" class="media-object">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Event name</h4>
+                    <p class="loaction">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                    </p>
+                    <p class="price">
+                      $ 300.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="event_box_right">
+                <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+                <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+              </div>
+            </div> -->
+            <!-- <div class="my_event_box">
+              <div class="event_box_left">
+                <div class="media">
+                  <div class="media-left">
+                    <img src="../../../assets/images/event_img.png" class="media-object">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Event name</h4>
+                    <p class="loaction">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                    </p>
+                    <p class="price">
+                      $ 300.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="event_box_right">
+                <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+                <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+              </div>
+            </div> -->
+            <!-- <div class="my_event_box">
+              <div class="event_box_left">
+                <div class="media">
+                  <div class="media-left">
+                    <img src="../../../assets/images/event_img.png" class="media-object">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Event name</h4>
+                    <p class="loaction">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                    </p>
+                    <p class="price">
+                      $ 300.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="event_box_right">
+                <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+                <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>History
+        </ng-template>
+        <div class="my_events_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+        fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div class="my_events_column" fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100"
+          fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+          <div class="my_event_box" *ngFor="let oldEvent of oldEvents">
+            <div class="event_box_left">
+              <div class="media">
+                <div class="media-left">
+                  <img [src]="oldEvent?.eventImage?.signedUrl"  class="media-object">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">{{oldEvent?.eventName}}</h4>
+                  <p class="loaction">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>{{oldEvent?.eventLocation}}
+                  </p>
+                  <p class="price">
+                    <!-- $ 300.00 -->
+                    {{oldEvent?.eventPrice | currency}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="event_box_right">
+              <p class="booking_date">Booking Date : {{oldEvent?.createdAt}}</p>
+              <p class="event_date">Event Date : {{oldEvent?.eventDate.toDate() | date }} - <span *ngIf="!oldEvent.hide">- {{oldEvent?.eventEndDate.toDate() | date}}</span>, {{oldEvent?.eventTime}}</p>
+            </div>
+          </div>
+
+          <div class="no_events_box" *ngIf="show2">
+            <div class="w_100">
+              <h4>you did't booked any events</h4>
+              <!-- <img src="../../../assets/images/no_events.png" alt=""> -->
+            </div>
+          </div>
+          <!-- <div class="my_event_box">
+            <div class="event_box_left">
+              <div class="media">
+                <div class="media-left">
+                  <img src="../../../assets/images/event_img.png" class="media-object">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Event name</h4>
+                  <p class="loaction">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                  </p>
+                  <p class="price">
+                    $ 300.00
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="event_box_right">
+              <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+              <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+            </div>
+          </div> -->
+          <!-- <div class="my_event_box">
+            <div class="event_box_left">
+              <div class="media">
+                <div class="media-left">
+                  <img src="../../../assets/images/event_img.png" class="media-object">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Event name</h4>
+                  <p class="loaction">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                  </p>
+                  <p class="price">
+                    $ 300.00
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="event_box_right">
+              <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+              <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+            </div>
+          </div>  -->
+          <!-- <div class="my_event_box">
+            <div class="event_box_left">
+              <div class="media">
+                <div class="media-left">
+                  <img src="../../../assets/images/event_img.png" class="media-object">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Event name</h4>
+                  <p class="loaction">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> City, State, Country, Pincode
+                  </p>
+                  <p class="price">
+                    $ 300.00
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="event_box_right">
+              <p class="booking_date">Booking Date 25-12-2020 10:30pm</p>
+              <p class="event_date">Event Date : 10 Jan 2021, 10:30 am</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>

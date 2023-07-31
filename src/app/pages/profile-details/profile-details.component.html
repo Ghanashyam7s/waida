@@ -1,0 +1,76 @@
+<ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+</ngx-spinner>
+<form class="form-section" [formGroup]="profileForm">
+  <div class="profile_detail_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+    fxLayout.xs="column" fxLayoutAlign="start start" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex.xl="30" fxFlex.lg="30" fxFlex.md="30" fxFlex.sm="70" fxFlex.xs="100" fxFlexFill
+      fxLayoutAlign="center center">
+      <div class="profile_detail">
+        <div class="profile_form">
+          <div class="custom-form-group">
+            <div class="custom-form-control">
+              <mat-form-field appearance="outline">
+                <input matInput disabled formControlName="name" placeholder="Name">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="custom-form-group">
+            <div class="custom-form-control">
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="role" placeholder="Role">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="custom-form-group">
+            <div class="custom-form-control">
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="phone" placeholder="Phone Number">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="custom-form-group">
+            <div class="custom-form-control disabled">
+              <mat-form-field appearance="outline">
+                <input matInput disabled readonly formControlName="email" placeholder="Email">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex.xl="30" fxFlex.lg="30" fxFlex.md="30" fxFlex.sm="70" fxFlex.xs="100" fxFlexFill
+      fxLayoutAlign="center center">
+      <div class="profile_detail">
+        <div class="profile_img">
+          <img *ngIf="user?.photoURL" [src]="user?.photoURL" alt="">
+          <img *ngIf="!user?.photoURL" src="https://img.icons8.com/clouds/100/000000/user.png" alt="">
+        </div>
+        <div class="custom-form-group upload_group">
+          <div class="custom-form-control">
+            <button type="button" class="upload_btn">
+              change profile image ?
+              <img src="../../../assets/images/icons/upload.svg" alt="" class="upload_icon" />
+              <input type="file" placeholder="choose your profile Image" class="input-upload"
+                (change)="fileChangeEvent($event)" #fileInput>
+            </button>
+          </div>
+        </div>
+        <!-- <img [src]="croppedImage" /> -->
+        <!-- <img src="../../../assets/images/pencilEdit.png"  > -->
+        <!-- <input type="file"
+        (change)="uploadFile(fileInput.files)" #fileInput > -->
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex.xl="30" fxFlex.lg="30" fxFlex.md="30" fxFlex.sm="70" fxFlex.xs="100" fxFlexFill
+      fxLayoutAlign="center center">
+      <image-cropper *ngIf="hide" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+        [aspectRatio]="4 / 3" format="png" (imageCropped)="imageCropped($event)" (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"></image-cropper>
+    </div>
+  </div>
+  <div class="row">
+    <div fxLayout="column" fxFlex.xl="60" fxFlex.lg="60" fxFlex.md="60" fxFlex.sm="100" fxFlex.xs="100" fxLayoutAlign="center center">
+      <button type="submit" class="btn btn-sm global-btn" (click)="updateUserProfile()">Save</button>
+    </div>
+  </div>
+</form>

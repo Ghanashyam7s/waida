@@ -1,0 +1,184 @@
+  <!-- BANNER-SEC -->
+  <app-banner [banners]="banners"></app-banner>
+  <section class="master_aboutus_sec">
+    <div class="flag_cornor"></div>
+    <!-- <ngx-spinner type="non">
+    <img height="150px" width="150px" src="../../../assets/images/Logo-Animation.gif" alt="img">
+  </ngx-spinner> -->
+    <ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+    </ngx-spinner>
+    <!-- about_us_sec -->
+    <section class="about_us_sec sec_padding">
+      <div class="wrapper">
+        <!-- HEADING -->
+        <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+          fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+            fxFlexFill>
+            <div class="custom_heading">
+              <h2 class="title">
+                About <span class="primary">us</span>
+              </h2>
+              <p [innerHtml]="aboutUs?.content"></p>
+              <!-- <p>Western Australian Indian Dental (WAID) Association Inc. is a Not-for-Profit Association of
+              Dentist of Indian Subcontinental Heritage & Graduates with similar Interests established in
+              2017 and registered in 2020. WAID stands to provide a platform for Dentist of Indian origin
+              to meet at regular intervals for Social & scientific activities.</p>
+            <p>WAID has been involved in organising Educational Meets, Promoting social & professional
+              networking, community & charitable activities since its inception. </p>
+            <p>The Newly Elected Executive committee team of WAID is committed set high standards for
+              the organisation with a vision to take the organisation to new heights. </p>
+            <p>WAID works closely with other Indian regional associations especially, Indian Society of
+              Western Australia (ISWA) the parent Indian body and Australian Indian Medical Association
+              (AIMA). WAID is committed to interact with such groups for social, charity, sports and
+              professional activities. </p>
+            <p>The past few years has been significant mainly to consolidate & expand WAID to new
+              horizons. </p>
+            <h4 align="center">Our Vision
+            </h4>
+            <p>To encourage, support, educate, and inspire our members to be world class leaders in the
+              West Australian Dental Industry </p> -->
+            </div>
+          </div>
+        </div>
+        <!-- ABOUT-STEPPER -->
+        <div class="about_stepper_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+          fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+          <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+            fxFlexFill>
+            <div class="custom_about_stepper">
+              <mat-horizontal-stepper #stepper [@.disabled]="true" [disableRipple]="true">
+                <mat-step *ngFor="let steper of aboutUs?.infoItems; let i = index">
+                  <ng-template matStepLabel>
+                    <img src="../../../assets/images/icons/stepper.png" class="step_img" alt=""
+                      [ngClass]="{'step-active': stepper.selectedIndex >= i}">
+                    <span class="year">{{steper?.title}}</span>
+                  </ng-template>
+                  <div class="about_stepper_content">
+                    <!-- <h4>Step1</h4> -->
+                    <!-- <img src="https://img.icons8.com/fluent-systems-filled/14/000000/hexagon.png"> -->
+                    <!-- <p>WAID started as an informal WhatsApp group on 24th Dec 2017. </p> -->
+                    <p [innerHtml]="steper?.content"></p>
+                  </div>
+                </mat-step>
+                <!-- <mat-step>
+                <ng-template matStepLabel>
+                  <img src="../../../assets/images/icons/stepper.png" class="step_img" alt=""
+                    [ngClass]="{'step-active': stepper.selectedIndex >= 1}">
+                  <span class="year">2018</span>
+                </ng-template>
+                <div class="about_stepper_content"> -->
+                <!-- <h4>Step2</h4> -->
+                <!-- <img src="https://img.icons8.com/fluent-systems-filled/14/000000/hexagon.png"/> -->
+                <!-- <p>Facebook group created on 29th Sept 2018. </p>
+                  <p>First formal meet at Heathcote reserve on 18th Nov 2018. </p>
+                </div>
+              </mat-step> -->
+                <!-- <mat-step>
+                <ng-template matStepLabel>
+                  <img src="../../../assets/images/icons/stepper.png" class="step_img" alt=""
+                    [ngClass]="{'step-active': stepper.selectedIndex >= 2}">
+                  <span class="year">2019</span>
+                </ng-template>
+                <div class="about_stepper_content"> -->
+                <!-- <h4>Step3</h4> -->
+                <!-- <img src="https://img.icons8.com/fluent-systems-filled/14/000000/hexagon.png"/> -->
+                <!-- <p>Admin Group formalised on 18th Oct 2019. </p>
+                  <p>WAID Study Group established, First informal meet and presentation on 25th Feb
+                    2019 </p>
+                </div>
+              </mat-step> -->
+                <!-- <mat-step>
+                <ng-template matStepLabel>
+                  <img src="../../../assets/images/icons/stepper.png" class="step_img" alt=""
+                    [ngClass]="{'step-active': stepper.selectedIndex >= 3}">
+                  <span class="year">2020</span>
+                </ng-template>
+                <div class="about_stepper_content"> -->
+                <!-- <h4>Step4</h4> -->
+                <!-- <img src="https://img.icons8.com/fluent-systems-filled/14/000000/hexagon.png"/> -->
+                <!-- <p> WAID officially incorporated as “Western Australian Indian Dental Association Inc”
+                    on 24th Feb 2020.
+                  </p>
+                  <p>WAID First Official Study club meet – 5th March 2020
+                  </p>
+                  <p>WAID 2nd Official Study club meet - 2nd Aug 2020
+                  </p>
+                  <p>WAID 3rd Official Study club meet - 25th Oct 2020
+                  </p>
+                </div>
+              </mat-step> -->
+              </mat-horizontal-stepper>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Happy Council Members -->
+    <section class="council_members_sec sec_padding">
+      <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+        fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100"
+          fxFlexFill>
+          <div class="wrapper">
+            <div class="custom_heading">
+              <h2 class="title">
+                Proud and <span class="primary">Happy Family</span>
+              </h2>
+            </div>
+            <div class="council_members_slider">
+              <div class="map_center">
+                <img src="../../../assets/images/map.png" alt="" class="aus_map">
+                <li class="council_member_list second">
+                  <img src="../../../assets/images/map_users/2.jpg" alt="">
+                  <div class="overlay"></div>
+                </li>
+                <li class="council_member_list third">
+                  <img src="../../../assets/images/map_users/3.jpg" alt="">
+                  <div class="overlay"></div>
+                </li>
+                <li class="council_member_list four">
+                  <img src="../../../assets/images/map_users/4.jpg" alt="">
+                  <div class="overlay"></div>
+                </li>
+                <li class="council_member_list five">
+                  <img src="../../../assets/images/map_users/5.jpg" alt="">
+                  <div class="overlay"></div>
+                </li>
+                <li class="council_member_list six">
+                  <img src="../../../assets/images/map_users/6.jpg" alt="">
+                  <div class="overlay"></div>
+                </li>
+                <div class="">
+                </div>
+                <div class="custom_council_slider navigations">
+                  <div class="swiper-button-prev member-button-prev">
+                  </div>
+                  <div class="swiper-container" [swiper]="memberConfig" *ngIf="councilMembers">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" *ngFor="let council of councilMembers">
+                        <div class="member_box">
+                          <div class="member_img">
+                            <img [src]="council?.image?.signedUrl">
+                          </div>
+                          <div class="member_content">
+                            <h4>{{council?.name}}</h4>
+                            <h5>{{council?.role}}</h5>
+                            <p>{{council?.message}} </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next member-button-next">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <div class="chakra_center"></div>

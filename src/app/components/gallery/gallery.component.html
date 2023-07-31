@@ -1,0 +1,33 @@
+<!-- ADD-MODAL-STRUCTURE -->
+<div class="master-modal gallery_modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <!-- Modal-Header -->
+      <div class="modal_close_btn">
+        <span (click)="dialogClose()" class="modal-close"><i class="material-icons">close</i></span>
+      </div>
+      <!-- Modal content-->
+      <div mat-dialog-content>
+        
+        <!-- Modal-Body -->
+        <div class="modal-body">
+          <!-- <h4 class="gallery_modal_head">{{data?.caption}} </h4> -->
+          <div class="swiper-container" [swiper]="galleryConfig">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img [src]="data?.image?.signedUrl" alt="">
+              </div>
+            </div>
+            <div class="navigations">
+              <div class="swiper-button-prev galley-button-prev">
+              </div>
+              <div class="swiper-button-next galley-button-next">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

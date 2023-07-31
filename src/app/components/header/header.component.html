@@ -1,0 +1,170 @@
+<!-- WEB-MENU -->
+<nav id="nav" class="master_navbar_sec">
+  <div class="header_main">
+    <!-- Top_Header -->
+    <section class="top_header">
+      <div class="wrapper">
+        <div class="row-wrap" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+          fxLayout.xs="column" fxLayoutAlign="center center">
+          <div fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+            <ul class="top_ul">
+              <li>
+                <img src="../../../assets/images/icons/mail.svg">
+                waida@waida.com.au
+              </li>
+            </ul>
+          </div>
+          <div fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50" fxFlex.xs="100" fxFlexFill
+            fxLayoutAlign="end end">
+            <div class="top_right_list">
+              <button class="btn btn-sm contact_btn global-btn" mat-button [routerLink]="['/contact-us']"
+                routerLinkActive="router-link-active">Contact Us</button>
+              <ul class="top_social_list">
+                <li><a [href]="settings?.social?.facebook" target="_blank"><img
+                      src="../../../assets/images/icons/fb.svg"> </a>
+
+                </li>
+                <li><a [href]="settings?.social?.twitter" target="_blank">
+                  <img src="../../../assets/images/icons/tw.svg"></a>
+                </li>
+                <li><a [href]="settings?.social?.youtube" target="_blank">
+                  <img src="../../../assets/images/icons/yu.svg"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="main_top_navbar" [ngClass]="{ sticky: isSticky }">
+      <div class="header_main">
+        <div class="wrapper">
+          <div class="header_row" fxLayout="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+            fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="8px">
+            <div fxLayout="column" fxFlex.xl="30" fxFlex.lg="30" fxFlex.md="30" fxFlex.sm="20" fxFlex.xs="100"
+              fxFlexFill>
+              <div class="w_100">
+                <div class="main-logo">
+                  <img [routerLink]="['/']" src="../../../../../assets/images/logo.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div fxShow.lt-sm="false" fxLayout="column" fxFlex.xl="70" fxFlex.lg="70" fxFlex.md="70" fxFlex.sm="80"
+              fxFlex.xs="100" fxFlexFill fxLayoutAlign="end end">
+              <ul class="header_bottom_navbar">
+                <!-- Home -->
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"
+                    [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <!-- About Us -->
+                <li><a [routerLink]="['/about-us']" routerLinkActive="router-link-active">About Us</a></li>
+                <!-- Services -->
+                <li><a [routerLink]="['/events-gallery']" routerLinkActive="router-link-active">Events</a></li>
+                <!-- Resources -->
+                <li><a [routerLink]="['/our-members']" routerLinkActive="router-link-active">Members</a></li>
+                <!-- Gallery -->
+                <li><a [routerLink]="['/our-gallery']" routerLinkActive="router-link-active">Gallery</a></li>
+                <!-- Sponsors -->
+                <li><a [routerLink]="['/our-sponsors']" routerLinkActive="router-link-active">Sponsors</a></li>
+                <!-- Membership -->
+                <li><a [routerLink]="['/our-membership']" routerLinkActive="router-link-active">Membership</a></li>
+                <!-- Login -->
+                <li *ngIf="!user"><a (click)="login()">Login</a></li>
+                <!-- PROFILE-MENU -->
+                <li class="admin-profile" [matMenuTriggerFor]="profileMenu" *ngIf="user">
+                  <a>
+                    <img *ngIf="user?.photoURL" [src]="user?.photoURL" alt="">
+                    <img *ngIf="!user?.photoURL" src="https://img.icons8.com/clouds/50/000000/user.png" alt="">
+                    <span class="user_name">{{user?.displayName}}</span>
+                  </a>
+                  <!-- <span class="arrow-icon">
+                  <img src="../../../assets/images/icons/down-arrow.svg" alt="">
+                  {{user?.displayName}}
+                </span> -->
+                  <mat-menu #profileMenu="matMenu" class="profile-dropdown table-action-btn">
+                    <button type="button" mat-menu-item [routerLink]="['/profile']">
+                      Profile </button>
+                    <button type="button" mat-menu-item (click)="logout()">Logout</button>
+                  </mat-menu>
+                </li>
+                <!-- <a>{{user?.displayName}}</a>
+              <a *ngIf="user" (click)="logout()" style="cursor: pointer;">Logout</a> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MOBILE-MENU -->
+  <div class="mobile_menu mobile-top-menu-show" fxFlex.gt-md="false">
+    <div class="" fxLayout="column" fxFlex="100" fxFlexFill>
+      <div class="mobile-navbar-sec" [ngClass]="{ sticky: isSticky}">
+        <div class="mobile-logo-box" [routerLink]="['/index']">
+          <img [routerLink]="['/']" src="../../../../../assets/images/logo.jpg" alt="" />
+        </div>
+        <div class="mobile-accordion">
+          <mat-accordion>
+            <mat-expansion-panel [(expanded)]="xpandStatus">
+              <mat-expansion-panel-header class="toggler" [collapsedHeight]="customNavCollapsedHeight"
+                [expandedHeight]="customNavExpandedHeight">
+                <mat-panel-title>
+                  <div class="mobile-toolbar-toggler">
+                    <span class=""></span>
+                    <span class=""></span>
+                    <span class=""></span>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul class="top-right-nav">
+                <!-- Home -->
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"
+                    (click)='xpandStatus=xpandStatus?false:true' [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <!-- About Us -->
+                <li><a [routerLink]="['/about-us']" routerLinkActive="router-link-active"
+                    (click)='xpandStatus=xpandStatus?false:true'>About Us</a></li>
+                <!-- Services -->
+                <li><a [routerLink]="['/events-gallery']" routerLinkActive="router-link-active"
+                    (click)='xpandStatus=xpandStatus?false:true'>Events</a></li>
+                <!-- Resources -->
+                <li><a [routerLink]="['/our-members']" routerLinkActive="router-link-active"
+                    (click)='xpandStatus=xpandStatus?false:true'>Members</a></li>
+                <!-- Gallery -->
+                <li><a [routerLink]="['/our-gallery']" routerLinkActive="router-link-active"
+                    (click)='xpandStatus=xpandStatus?false:true'>Gallery</a></li>
+                <!-- Sponsors -->
+                <li><a [routerLink]="['/our-sponsors']" routerLinkActive="router-link-active"
+                    (click)='xpandStatus=xpandStatus?false:true'>Sponsors</a></li>
+                <!-- Membership -->
+                <li><a [routerLink]="['/our-membership']" routerLinkActive="router-link-active"
+                    (click)='xpandStatus=xpandStatus?false:true'>Membership</a></li>
+                <!-- Login -->
+                <li *ngIf="!user"><a (click)="login()" (click)='xpandStatus=xpandStatus?false:true'>Login</a></li>
+                <!-- PROFILEMENU -->
+                <li class="admin-profile" [matMenuTriggerFor]="profileMenu" *ngIf="user">
+                  <a>
+                    <img *ngIf="user?.photoURL" [src]="user?.photoURL"  alt="">
+                    <img *ngIf="!user?.photoURL" src="https://img.icons8.com/clouds/50/000000/user.png" alt="">
+                    <span class="user_name">{{user?.displayName}}</span>
+                  </a>
+                  <mat-menu #profileMenu="matMenu" class="profile-dropdown table-action-btn">
+                    <button type="button" mat-menu-item [routerLink]="['/profile']"
+                      (click)='xpandStatus=xpandStatus?false:true'>
+                      Profile </button>
+                    <button type="button" mat-menu-item (click)="logout()"
+                      (click)='xpandStatus=xpandStatus?false:true'>Logout</button>
+                  </mat-menu>
+                </li>
+                <!-- <a>{{user?.displayName}}</a>
+              <a *ngIf="user" (click)="logout()" style="cursor: pointer;">Logout</a> -->
+              </ul>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<span (click)="scrollTop()" class="scroll-top" [ngClass]="{ 'scroll-top-in': isScrollTop }">
+  <i class="material-icons"> keyboard_arrow_up</i>
+</span>

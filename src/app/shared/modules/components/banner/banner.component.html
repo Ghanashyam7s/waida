@@ -1,0 +1,51 @@
+<!-- BANNER -->
+<section class="banner-sec">
+  <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+    fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100" fxFlexFill
+      *ngIf="bannerConfig">
+      <!-- <video autoplay class="collapse in" autoplay="autoplay" loop controls [muted]='"muted"' playsinline>
+        <source src="../../../../../assets/images/video.mov" type="video/mp4">
+      </video> -->
+      <div class="swiper-container" [swiper]="bannerConfig" *ngIf="banners" (slideChange)="slideChanged($event)">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let banner of banners;let i = index">
+            <div class="banner-img">
+              <img *ngIf="banner?.image?.mediaType === 'IMAGE'" [src]="banner?.image?.signedUrl" alt="banner_img">
+              <video *ngIf="banner?.image?.mediaType === 'VIDEO'" [src]="banner?.image?.signedUrl" class="collapse in"
+              loop playsinline [id]="'bannerVideo' + i" #customVideoTag muted></video>
+              <div class="video_mute" *ngIf="banner?.image?.mediaType === 'VIDEO'">
+
+                <img src="../../../../../assets/images/icons/mute.svg" alt="un mute" *ngIf="noSound"   (click)="muteAndUnmute('bannerVideo' + i, false)" >
+                <img src="../../../../../assets/images/icons/unmute.svg" alt="un mute" *ngIf="sound" (click)="muteAndUnmute('bannerVideo' + i, true)" >
+
+              </div>
+            </div>
+            <div class="wrapper banner_container">
+              <div class="banner_full">
+                <div class="banner-content">
+                  <h1>
+                    {{banner?.title}}
+                    <span class="primary">{{banner?.shortTitle}}</span>
+                  </h1>
+                  <p>{{banner?.subTitle}}</p>
+                  <button [routerLink]="['/our-membership']" class="btn btn-sm global-btn banner-btn" mat-button>Join
+                    Us</button>
+                </div>
+                <div id="scrollPage"></div>
+              </div>
+            </div>
+            <div class="banner_overlay"></div>
+          </div>
+        </div>
+        <div class="navigations">
+          <div class="swiper-button-prev banner-button-prev">
+          </div>
+          <div class="swiper-button-next banner-button-next">
+          </div>
+        </div>
+      </div>
+      <!-- <div class="swiper-pagination swiper-pagination-banner"></div> -->
+    </div>
+  </div>
+</section>

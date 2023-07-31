@@ -1,0 +1,82 @@
+<ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+</ngx-spinner>
+
+<div class="row-wrap my_subscriptions_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row"
+  fxLayout.sm="row" fxLayout.xs="column" fxLayoutAlign="start stretch">
+  <div class="my_subscriptions_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+    fxFlex.xs="100" fxFlexFill *ngFor="let subscription of memberSubscription">
+   
+    <div class="my_subscriptions_box active">
+      <div class="media">
+        <div class="media-left">
+          <img src="../../../assets/images/subs.png" class="media-object">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">
+            {{ subscription | json}}
+            {{membershipPlan}}</h4>
+          <button type="submit" class="btn btn-sm global-btn" mat-button>Expires on {{subscription?.endsAt.toDate() | date}}</button>
+        </div>
+      </div>
+      <p class="booking_date">Booking date : {{subscription?.purchasedAt.toDate() | date}}</p>
+      <p class="booking_id">Booking ID : #1220177</p>
+      <div class="plan_details">
+        <h4>{{membershipPlan}} plan</h4>
+        <h5>{{subscription?.planAmount | currency}}</h5>
+      </div>
+      
+      <div class="" fxLayout="column" fxLayoutAlign="center center">
+        <button class="btn btn-sm reg_btn global-btn" mat-button (click)="checkValidity()"
+          [ngClass]="{'show': !showPaypal , 'hide': showPaypal}"> {{membershipPrice| currency}} Register Now
+        </button>
+        <div [ngClass]="{'show': showPaypal , 'hide': !showPaypal}">
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="my_subscriptions_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+    fxFlex.xs="100" fxFlexFill>
+    <div class="my_subscriptions_box">
+      <div class="media">
+        <div class="media-left">
+          <img src="../../../assets/images/subs.png" class="media-object">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">1year
+            Membership</h4>
+          <button type="submit" class="btn btn-sm global-btn" mat-button>Expairs on 10/02/2019</button>
+        </div>
+      </div>
+      <p class="booking_date">Booking date : 10/02/2018</p>
+      <p class="booking_id">Booking ID : #1220177</p>
+      <div class="plan_details">
+        <h4>1 year annual plan</h4>
+        <h5>$ 1000</h5>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="my_subscriptions_column" fxLayout="column" fxFlex.xl="33" fxFlex.lg="33" fxFlex.md="33" fxFlex.sm="50"
+    fxFlex.xs="100" fxFlexFill>
+    <div class="my_subscriptions_box">
+      <div class="media">
+        <div class="media-left">
+          <img src="../../../assets/images/subs.png" class="media-object">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">1year
+            Membership</h4>
+          <button type="submit" class="btn btn-sm global-btn" mat-button>Expairs on 10/02/2019</button>
+        </div>
+      </div>
+      <p class="booking_date">Booking date : 10/02/2018</p>
+      <p class="booking_id">Booking ID : #1220177</p>
+      <div class="plan_details">
+        <h4>1 year annual plan</h4>
+        <h5>$ 1000</h5>
+      </div>
+    </div>
+  </div> -->
+</div>

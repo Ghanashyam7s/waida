@@ -1,0 +1,516 @@
+<!-- BANNER -->
+<app-banner [banners]="banners"></app-banner>
+<!-- About us -->
+<ngx-spinner template="<img src='../../../assets/images/Logo-Animation.gif' class='loader_img'>">
+</ngx-spinner>
+<section class="master_index_sec">
+  <div class="flag_cornor"></div>
+<section class="about_us_sec sec_padding">
+  <div class="flag_center"></div>
+  <div class="wrapper">
+    <!-- HEADING-ROW -->
+    <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+      fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+      <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+        <div class="custom_heading">
+          <h2 class="title">
+            About <span class="primary">us</span>
+          </h2>
+          <!-- <div class="gear" [ngStyle]="{'transform': rotation}"></div> -->
+          <p>Western Australian Indian Dental (WAID) Association Inc is a not-for-profit association of dentists of Indian descent & dental graduates with similar interests. It was established in 2017 and has been registered in 2020. WAID stands to provide a platform for dentists of Indian origin to meet at regular intervals for social gatherings and professional learning.</p>
+        </div>
+      </div>
+    </div>
+    <!-- ABOUT-SCROLL -->
+    <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+      fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+      <div fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+        <div class="chakra_img">
+          <div class="flag-bg">
+            <img src="../../../assets/images/flags.svg" alt="data">
+          </div>
+          <div class="chakra_flag">
+            <img [ngStyle]="{'transform': rotation}" src="../../../assets/images/chakra.svg">
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50" fxFlex.xs="100" fxFlexFill>
+        <div class="about_head">
+          <div class="w_100">
+            <div class="swiper-container" [swiper]="aboutConfig" (slideChange)="slideChanged($event)" *ngIf="aboutUs?.infoItems">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let items of aboutUs?.infoItems">
+                  <div class="w-100 swiper_content" >
+                    <h3 class=""> <span>{{items?.title}}</span></h3>
+                    <!-- <p class="">WAID started as an informal WhatsApp group on 24th Dec 2017. </p> -->
+                    <p [innerHtml]="items?.content"></p>
+                    <div class="wrapper overlay_container">
+                      <div class="overlay_step">
+                        <!-- <h4>Step 1</h4> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="swiper-slide">
+                  <div class="w-100 swiper_content">
+                    <h3 class=""> <span>2018</span></h3>
+                    <p class="">Facebook group created on 29th Sept 2018. </p>
+                    <p class="">First formal meet at Heathcote reserve on 18th Nov 2018. </p>
+                    <div class="wrapper overlay_container">
+                      <div class="overlay_step">
+
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- <div class="swiper-slide">
+                  <div class="w-100 swiper_content">
+                    <h3 class=""> <span>2019</span></h3>
+                    <p class="">Admin Group formalised on 18th Oct 2019. </p>
+                    <p class="">WAID Study Group established, First informal meet and presentation on 25th Feb
+                      2019 </p>
+                    <div class="wrapper overlay_container">
+                      <div class="overlay_step">
+
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- <div class="swiper-slide">
+                  <div class="w-100 swiper_content">
+                    <h3 class=""> <span>2020</span></h3>
+                    <p class=""> WAID officially incorporated as “Western Australian Indian Dental Association Inc”
+                      on 24th Feb 2020.
+                    </p>
+                    <p>WAID First Official Study club meet – 5th March 2020
+                    </p>
+                    <p>WAID 2nd Official Study club meet - 2nd Aug 2020
+                    </p>
+                    <p>WAID 3rd Official Study club meet - 25th Oct 2020
+                    </p>
+                    <div class="wrapper overlay_container">
+                      <div class="overlay_step">
+
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Happy Council Members -->
+<section class="council_members_sec sec_padding">
+  <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+    fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+      <div class="wrapper">
+        <div class="custom_heading">
+          <h2 class="title">
+            Proud and <span class="primary">Happy Family</span>
+          </h2>
+        </div>
+        <div class="council_members_slider">
+          <div class="map_center">
+            <img src="../../../assets/images/map.png" alt="" class="aus_map">
+            <li class="council_member_list second">
+              <img src="../../../assets/images/map_users/2.jpg" alt="">
+              <div class="overlay"></div>
+            </li>
+            <li class="council_member_list third">
+              <img src="../../../assets/images/map_users/3.jpg" alt="">
+              <div class="overlay"></div>
+            </li>
+            <li class="council_member_list four">
+              <img src="../../../assets/images/map_users/4.jpg" alt="">
+              <div class="overlay"></div>
+            </li>
+            <li class="council_member_list five">
+              <img src="../../../assets/images/map_users/5.jpg" alt="">
+              <div class="overlay"></div>
+            </li>
+            <li class="council_member_list six">
+              <img src="../../../assets/images/map_users/6.jpg" alt="">
+              <div class="overlay"></div>
+            </li>
+            <div class="custom_council_slider navigations">
+              <div class="swiper-button-prev member-button-prev">
+              </div>
+              <div class="swiper-container" [swiper]="memberConfig" *ngIf="councilMembers">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" *ngFor="let council of councilMembers">
+                    <div class="member_box">
+                      <div class="member_img">
+                        <img [src]="council?.image?.signedUrl">
+                      </div>
+                      <div class="member_content">
+                        <h4>{{council?.name}}</h4>
+                        <h5>{{council?.role}}</h5>
+                        <p>{{council?.message}} </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next member-button-next">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Sponsors -->
+<section class="our_sponsors_sec sec_padding">
+  <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+    fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+      <div class="wrapper">
+        <div class="custom_heading">
+          <h2 class="title">
+            Our <span class="primary">Sponsors</span>
+          </h2>
+        </div>
+        <div class="our_sponsors_slider">
+          <div class="swiper-container" [swiper]="clientConfig" *ngIf="sponsors">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" *ngFor="let sponsor of sponsors">
+                <img [src]="sponsor?.image?.signedUrl" alt="">
+              </div>
+              <!-- <div class="swiper-slide">
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../../assets/images/clients/1.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../../assets/images/clients/2.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../../assets/images/clients/3.png" alt="">
+              </div> -->
+            </div>
+            <div class="swiper-pagination swiper-pagination-banner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Gallery Sec -->
+<section class="gallery_sec sec_padding">
+  <div class="wrapper">
+    <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+      fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="35px">
+      <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+        <div class="custom_heading">
+          <h2 class="title">
+            Event <span class="primary">Gallery</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="gallery_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+      fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+      <div class="gallery_left_column" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50"
+        fxFlex.xs="100" fxFlexFill>
+        <div class="calender custom_calender" *ngIf="datas.length">
+          <mat-calendar [dateClass]="dateClass()" [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </div>
+      </div>
+      <div class="gallery_right_column" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50"
+        fxFlex.xs="100" fxFlexFill>
+        <div class="gallery_content_box">
+          <!-- Media -->
+          <div class="media" *ngFor="let selEvent of selectedEvents" [routerLink]="['/event-details', selEvent.id]">
+            <div class="media-left">
+              <img [src]="selEvent?.image[0]?.signedUrl" class="media-object">
+            </div>
+            <div class="media-body">
+              <div class="event_head">
+                <h4>{{selEvent?.title | titlecase}}</h4>
+                <span>{{selEvent?.startDate.toDate() | date}}</span>
+              </div>
+              <p class="event_place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <!-- Jhon Mcgrath Hall, 97 Hensman St, South Perth WA 6151. -->
+                {{selEvent?.location}}
+              </p>
+              <div [innerHTML]="selEvent?.infoSection" class="event_content">
+                <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem
+                voluptatem obcaecati! Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Rem autem voluptatem
+                obcaecati! -->
+                <!-- {{selEvent?.infoSection}} -->
+              </div>
+              <a [routerLink]="['/event-details', selEvent.id]">Know More</a>
+            </div>
+          </div>
+          <div class="no_events_box" *ngIf="show">
+            <div class="w_100">
+              <h4>No events On this Date</h4>
+              <img src="../../../assets/images/no_events.png" alt="">
+            </div>
+          </div>
+          <!-- Media -->
+          <!-- <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/gallery/2.jpg" class="media-object">
+            </div>
+            <div class="media-body">
+              <div class="event_head">
+                <h4>Event Name One </h4>
+                <span>Dec 25, 2020</span>
+              </div>
+              <p class="event_place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                Jhon Mcgrath Hall, 97 Hensman St, South Perth WA 6151.
+              </p>
+              <p class="event_content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem
+                voluptatem obcaecati! Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Rem autem voluptatem
+                obcaecati!
+              </p>
+            </div>
+          </div> -->
+          <!-- Media -->
+          <!-- <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/gallery/3.jpg" class="media-object">
+            </div>
+            <div class="media-body">
+              <div class="event_head">
+                <h4>Event Name Two </h4>
+                <span>Jan 01, 2021</span>
+              </div>
+              <p class="event_place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                Jhon Mcgrath Hall, 97 Hensman St, South Perth WA 6151.
+              </p>
+              <p class="event_content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem
+                voluptatem obcaecati! Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Rem autem voluptatem
+                obcaecati!
+              </p>
+            </div>
+          </div> -->
+          <!-- Media -->
+          <!-- <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/gallery/4.jpg" class="media-object">
+            </div>
+            <div class="media-body">
+              <div class="event_head">
+                <h4>Event Name Four </h4>
+                <span>Jan 04, 2021</span>
+              </div>
+              <p class="event_place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                Jhon Mcgrath Hall, 97 Hensman St, South Perth WA 6151.
+              </p>
+              <p class="event_content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem
+                voluptatem obcaecati! Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Rem autem voluptatem
+                obcaecati!
+              </p>
+            </div>
+          </div> -->
+        </div>
+        <!-- no_events_box -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Testimonials -->
+<section class="our_testimonial_sec sec_padding">
+  <div class="" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+    fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100" fxFlexFill>
+      <div class="wrapper">
+        <div class="custom_heading">
+          <h2 class="title">
+            Our <span class="primary">Testimonials</span>
+          </h2>
+        </div>
+        <div class="our_testimonial_slider">
+          <div class="swiper-container" [swiper]="testConfig" *ngIf="testimonials">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" *ngFor="let testimonial of testimonials">
+                <div class="testimonial-card">
+                  <div class="w-100">
+                    <div class="heading">
+                      <div class="">
+                        <h4>Dr. {{testimonial?.name}}</h4>
+                        <p>{{testimonial?.role}}</p>
+                      </div>
+                      <div class="testimonial_img">
+                        <h1 *ngIf="!testimonial?.profileImage?.signedUrl">{{testimonial?.name2 | uppercase}}</h1>
+                        <img *ngIf="testimonial?.profileImage?.signedUrl" [src]="testimonial?.profileImage?.signedUrl" alt="">
+                      </div>
+                    </div>
+                    <div class="content">
+                      <p>
+                        {{testimonial?.message}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-banner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Latest News -->
+<section class="latest_news_sec sec_padding">
+  <div class="custom_heading">
+    <h2 class="title">
+      Latest <span class="primary">News</span>
+    </h2>
+  </div>
+  <div class="wrapper">
+    <div class="latest_news_row" fxLayout="row" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+      fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="15px">
+      <div class="latest_news_leftcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50"
+        fxFlex.xs="100" fxFlexFill>
+        <div class="latest_news_content">
+          <!-- <h3 class="title">
+            Hospital doctors examine
+            patients so that they diagnose
+          </h3> -->
+          <!-- <p>
+            Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue.
+            Cras ut interdum elit. Ut malesuada a urna sit amet blandit. Nullam nunc lorem, aliquam at eros laoreet,
+            feugiat bibendum ligula. Aenean congue, massa id aliquet semper, ligula ante tristique nulla, quis posuere
+            dui purus vel urna. Nullam varius, magna nec egestas convallis, orci ex tempus quam, id finibus arcu ipsum
+            fringilla purus. Aenean dapibus suscipit eleifend. Aliquam vel ipsum eu lorem hendrerit iaculis vitae ut
+            lorem. Suspendisse ullamcorper dolor faucibus sem auctor consequat. Ut luctus posuere auctor. Sed non
+            molestie metus.Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at
+            est augue. Cras ut interdum elit. Ut malesuada a urna sit amet blandit. Nullam nunc lorem, aliquam at eros
+            laoreet, feugiat bibendum ligula.
+          </p> -->
+          <ul class="news_listing">
+            <li>
+              <div class="news_head">
+                <span>
+                  <i class="fa fa-calendar" aria-hidden="true"></i> {{newsToDayDate | date}}
+                </span>
+                <span>
+                  <i class="fa fa-user" aria-hidden="true"></i> Admin
+                </span>
+              </div>
+              <div class="news_content">
+                <!-- <h4>{{news?.title}}</h4> -->
+                <h4>National COVID Vaccination rollout updates </h4>
+              </div>
+              <div class="read_more">
+                <a href="https://www.health.gov.au/resources/publications/australias-covid-19-vaccine-national-roll-out-strategy"
+                  target="_blank">Read More <i class="material-icons">arrow_forward</i></a>
+              </div>
+            </li>
+            <li>
+              <div class="news_head">
+                <span>
+                  <i class="fa fa-calendar" aria-hidden="true"></i> {{newsToDayDate | date}}
+                </span>
+                <span>
+                  <i class="fa fa-user" aria-hidden="true"></i> Admin
+                </span>
+              </div>
+              <div class="news_content">
+                <h4>Researchers develop tent to prevent the spread of SARS-CoV-2 in dental settings</h4>
+              </div>
+              <div class="read_more">
+                <a href="https://ap.dental-tribune.com/news/researchers-develop-tent-to-prevent-spread-of-sars-cov-2-in-dental-settings"
+                  target="_blank">Read More <i class="material-icons">arrow_forward</i></a>
+              </div>
+            </li>
+            <li>
+              <div class="news_head">
+                <span>
+                  <i class="fa fa-calendar" aria-hidden="true"></i> {{newsToDayDate | date}}
+                </span>
+                <span>
+                  <i class="fa fa-user" aria-hidden="true"></i> Admin
+                </span>
+              </div>
+              <div class="news_content">
+                <h4>Dental Hygiene Named Fifth Best Healthcare Support Job</h4>
+              </div>
+              <div class="read_more">
+                <a href="https://www.dentistrytoday.com/news/todays-dental-news/item/7676-dental-hygiene-named-fifth-best-healthcare-support-job"
+                  target="_blank">Read More <i class="material-icons">arrow_forward</i></a>
+              </div>
+            </li>
+            <!-- <li>
+              <div class="news_head">
+                <span>
+                  <i class="fa fa-calendar" aria-hidden="true"></i> August 10, 2020
+                </span>
+                <span>
+                  <i class="fa fa-user" aria-hidden="true"></i> Admin
+                </span>
+              </div>
+              <div class="news_content">
+                <h4>How To Clean Your Home Faster And More
+                  Efficiently</h4>
+              </div>
+              <div class="read_more">
+                <a>Read More <i class="material-icons">arrow_forward</i></a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="latest_news_rightcolumn" fxLayout="column" fxFlex.xl="50" fxFlex.lg="50" fxFlex.md="50" fxFlex.sm="50"
+        fxFlex.xs="100" fxFlexFill>
+        <div class="feed-iframe-box">
+          <div class="feed-head">
+            <div class="media">
+              <div class="media-left">
+                <img src="../../../assets/images/logo.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <h4>WAIDA</h4>
+                <p>4435 Likes</p>
+              </div>
+            </div>
+            <!-- <button class="btn btn-sm follow_btn" mat-button>
+              <img src="../../../assets/images/facebook.svg" alt=""> Like Page
+            </button> -->
+          </div>
+          <!-- <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F173975233504376&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="500" height="500" scrolling="no" frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+            <!-- <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMukta-Design-and-Fashion-106546537706773%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=979651595735443" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+            <iframe src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F173975233504376%2F&width=350&show_social_context=true&show_metadata=false&appId=324303831565221&height=239" width="280" height="239" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <!-- <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F173975233504376&width=500&show_text=true&height=202&appId" width="500" height="202" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="chakra_center"></div>
+</section>
+
+<!-- <div *ngIf="datas">
+	<mat-calendar [dateClass]="dateClass()"></mat-calendar>
+</div> -->
