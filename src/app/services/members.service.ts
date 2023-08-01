@@ -11,7 +11,8 @@ export class MembersService {
   }
 
   getMembers(): Observable<any> {
-    return this.afs.collection<any>('ourMembers', ref => ref.where('status', '==', 'APPROVED')).valueChanges();
+    // return this.afs.collection<any>('ourMembers', ref => ref.where('status', '==', 'APPROVED')).valueChanges();
+    return this.afs.collection<any>('ourMembers', ref => ref.where('status', '==', 'PENDING')).valueChanges();
   }
 
 }

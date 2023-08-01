@@ -42,8 +42,8 @@
       fxLayoutAlign="center center">
       <div class="profile_detail">
         <div class="profile_img">
-          <img *ngIf="user?.photoURL" [src]="user?.photoURL" alt="">
-          <img *ngIf="!user?.photoURL" src="https://img.icons8.com/clouds/100/000000/user.png" alt="">
+          <img [src]="currentMember?.image?.signedUrl" alt="Profile Image">
+          <!-- <img *ngIf="!user?.photoURL" src="https://img.icons8.com/clouds/100/000000/user.png" alt=""> -->
         </div>
         <div class="custom-form-group upload_group">
           <div class="custom-form-control">
